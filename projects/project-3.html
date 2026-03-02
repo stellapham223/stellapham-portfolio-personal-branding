@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Authentication — Stella Pham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="detail-page">
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">stella<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about" class="nav-link" id="nav-about">Giới thiệu</a></li>
+      <li><a href="../index.html#skills" class="nav-link" id="nav-skills">Kỹ năng</a></li>
+      <li><a href="../index.html#experience" class="nav-link" id="nav-exp">Kinh nghiệm</a></li>
+      <li><a href="../index.html#projects" class="nav-link" id="nav-proj">Dự án</a></li>
+      <li><a href="../index.html#contact" class="nav-link" id="nav-contact">Liên hệ</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="vi">VI</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="detail-hero">
+  <div class="container">
+    <a href="../index.html#projects" class="detail-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span id="back-text">Quay lại</span>
+    </a>
+    <div class="detail-icon">🔐</div>
+    <div class="detail-tag">Case Study 03</div>
+    <h1 class="detail-title" id="detail-title">Data Dashboard Authentication</h1>
+    <p class="detail-summary" id="detail-summary">
+      Giải quyết cost spike 8x và lộ dữ liệu nhạy cảm bằng cách thiết kế hệ thống Google Auth + role-based access control cho internal analytics dashboard — giảm chi phí xuống 8 lần sau khi triển khai.
+    </p>
+    <div class="detail-meta">
+      <span class="detail-meta-tag">📌 Product + Security</span>
+      <span class="detail-meta-tag">🏢 Avada Group</span>
+      <span class="detail-meta-tag">🛠️ Vercel · Google Auth</span>
+      <span class="detail-meta-tag" id="meta-status">✅ Shipped — cost reduced 8x</span>
+    </div>
+  </div>
+</div>
+
+<div class="detail-body">
+  <div class="container">
+
+    <!-- CONTEXT & PROBLEM -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-context">🔍 Context & Problem</h2>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="context-title">Context</h3>
+          <p id="context-body">Dashboard analytics nội bộ được xây dựng trên Vercel, ban đầu chỉ phục vụ team sản phẩm. Sau lần update thứ 2 — bổ sung data Time to Value và North Star Metric — hệ thống đột ngột tăng chi phí đáng kể.</p>
+        </div>
+        <div class="detail-card">
+          <h3 id="problem-title">Trigger</h3>
+          <p id="problem-body">Sau update thứ 2, chi phí nhảy từ <strong>~$3.1/query</strong> lên <strong>$24/query</strong> — tăng gần 8 lần. Dashboard vẫn publicly accessible, external traffic và automated requests gây excessive data queries và cost escalation.</p>
+        </div>
+      </div>
+      <div class="detail-card fade-in" style="margin-top:24px;">
+        <h3 id="issues-title">Core Issues Identified</h3>
+        <ul>
+          <li id="i1">Dashboard công khai truy cập, không có access control</li>
+          <li id="i2">External traffic và automated requests gây excessive queries</li>
+          <li id="i3">Dữ liệu nhạy cảm (revenue, North Star Metric) bị expose mà không có authorization</li>
+          <li id="i4">Không có role-based access management cho internal stakeholders</li>
+          <li id="i5">Real-time updates trigger frequent recomputation và data fetches không cần thiết</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COST SPIKE VISUAL -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-cost">💸 Cost Impact</h2>
+      <div class="kpi-grid fade-in">
+        <div class="kpi-card">
+          <div class="kpi-value" style="color:var(--accent-green)">~$3.1</div>
+          <div class="kpi-label" id="cost1-label">Chi phí ban đầu / query</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" style="color:var(--accent-orange)">$24</div>
+          <div class="kpi-label" id="cost2-label">Sau update thứ 2 (trước fix)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" style="color:var(--accent-green)">~$3.3</div>
+          <div class="kpi-label" id="cost3-label">Sau khi implement authentication</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" style="color:var(--accent)">8x</div>
+          <div class="kpi-label" id="cost4-label">Cost reduction achieved</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HYPOTHESES -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-hypo">💡 Hypotheses</h2>
+      <div class="hypothesis-grid fade-in">
+        <div class="hypothesis-card">
+          <div class="hypothesis-label">H1</div>
+          <p id="h1">Nếu giảm real-time updates xuống scheduled updates, chi phí hệ thống sẽ giảm đáng kể mà không ảnh hưởng đến chất lượng ra quyết định.</p>
+        </div>
+        <div class="hypothesis-card">
+          <div class="hypothesis-label">H2</div>
+          <p id="h2">Nếu thêm Google authentication, external spam và unauthorized access sẽ bị loại bỏ hoàn toàn.</p>
+        </div>
+        <div class="hypothesis-card">
+          <div class="hypothesis-label">H3</div>
+          <p id="h3">Nếu giới thiệu role-based access, data governance và internal collaboration sẽ được cải thiện đáng kể.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOLUTION -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-solution">🏗️ Solution Design</h2>
+
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="arch-title">7.1 System & Access Flow Architecture</h3>
+        <p id="arch-body">Hai kiến trúc được cân nhắc: (a) Authentication sau khi UI load, (b) Authentication tại access-control layer trước khi fetch data. Phương án được chọn: Request interception và validation trước khi serve dashboard data + email-based allowlist check sau Google authentication.</p>
+      </div>
+
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="auth-title">7.2 Authentication & Authorization</h3>
+          <ul>
+            <li id="a1">Google Sign-In làm authentication method</li>
+            <li id="a2">Validate user email against an allowlist</li>
+            <li id="a3"><strong>Admin role:</strong> quản lý whitelist và approve access requests</li>
+            <li id="a4"><strong>Viewer role:</strong> read-only access</li>
+            <li id="a5">Unauthorized users → "Access Denied" screen + request access flow</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3 id="ui-title">7.3 UI & Admin Management</h3>
+          <ul>
+            <li id="u1">Login screen với Google authentication</li>
+            <li id="u2">Access denied và request access screens</li>
+            <li id="u3">Admin dashboard: quản lý whitelist (add/remove)</li>
+            <li id="u4">Assign roles và approve/reject access requests</li>
+            <li id="u5">Giảm phụ thuộc vào Engineering cho access management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLLABORATION -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-collab">🤝 Collaboration</h2>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="collab-title">Phối hợp với</h3>
+          <ul>
+            <li id="c1">Engineering: authentication flow, request interception, data update scheduling</li>
+            <li id="c2">Stakeholders: xác định ai nên có admin vs. viewer access</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3 id="resp-title">Trách nhiệm của tôi</h3>
+          <ul>
+            <li id="r1">Xác định access control rules và roles</li>
+            <li id="r2">Quyết định update frequency strategy</li>
+            <li id="r3">Căn chỉnh solution với cost, security, và usability goals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPACT -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-impact">📈 Impact & Learnings</h2>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="biz-title">Business & Technical Outcomes</h3>
+          <ul>
+            <li id="bt1">Infrastructure cost giảm và ổn định sau implementation</li>
+            <li id="bt2">Unauthorized external access bị loại bỏ hoàn toàn</li>
+            <li id="bt3">Sensitive revenue và product metrics được bảo mật</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3 id="ops-title">Operational Outcomes</h3>
+          <ul>
+            <li id="ot1">Admin rights được delegate cho trusted users</li>
+            <li id="ot2">Admins có thể tự quản lý: add/remove viewers, approve requests</li>
+            <li id="ot3">Giảm phụ thuộc vào Engineering cho access management</li>
+          </ul>
+        </div>
+      </div>
+      <div class="impact-highlight fade-in" style="margin-top:24px;">
+        <h3 id="learning-title">Key Learning</h3>
+        <p id="learning-body">Security và cost considerations phải được coi là product requirements, không phải technical afterthoughts. Not all analytics require real-time data to be valuable — đây là insight quan trọng giúp giải quyết cả 2 vấn đề cost và security cùng lúc.</p>
+      </div>
+      <div class="detail-card fade-in" style="margin-top:24px;">
+        <h3 id="next-title">Next Steps</h3>
+        <ul>
+          <li id="n1">Introduce finer-grained permissions by data type</li>
+          <li id="n2">Add audit logs for access changes</li>
+          <li id="n3">Consider SSO expansion if dashboard usage scales across teams</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="detail-nav">
+      <a href="project-2.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span id="prev-proj">← Case Study 02</span>
+      </a>
+      <a href="../index.html#projects">
+        <span id="back-all">Tất cả dự án</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<footer><p id="footer-text">© 2025 Stella Pham. Built with ❤️</p></footer>
+
+<script src="../js/main.js"></script>
+<script>
+const d3i18n = {
+  vi: {
+    back:'← Quay lại', backAll:'Tất cả dự án', prevProj:'← Case Study 02',
+    title:'Data Dashboard Authentication',
+    summary:'Giải quyết cost spike 8x và lộ dữ liệu nhạy cảm bằng cách thiết kế hệ thống Google Auth + role-based access control cho internal analytics dashboard — giảm chi phí xuống 8 lần sau khi triển khai.',
+    metaStatus:'✅ Shipped — cost reduced 8x',
+    secContext:'🔍 Context & Problem',
+    contextTitle:'Context', contextBody:'Dashboard analytics nội bộ được xây dựng trên Vercel, ban đầu chỉ phục vụ team sản phẩm. Sau lần update thứ 2 — bổ sung data Time to Value và North Star Metric — hệ thống đột ngột tăng chi phí đáng kể.',
+    problemTitle:'Trigger', problemBody:'Sau update thứ 2, chi phí nhảy từ <strong>~$3.1/query</strong> lên <strong>$24/query</strong> — tăng gần 8 lần. Dashboard vẫn publicly accessible, external traffic và automated requests gây excessive data queries và cost escalation.',
+    issuesTitle:'Core Issues Identified',
+    issues:['Dashboard công khai truy cập, không có access control','External traffic và automated requests gây excessive queries','Dữ liệu nhạy cảm (revenue, North Star Metric) bị expose','Không có role-based access management cho internal stakeholders','Real-time updates trigger frequent recomputation không cần thiết'],
+    secCost:'💸 Cost Impact',
+    cost:['Chi phí ban đầu / query','Sau update thứ 2 (trước fix)','Sau khi implement authentication','Cost reduction achieved'],
+    secHypo:'💡 Hypotheses',
+    h:['Nếu giảm real-time updates xuống scheduled updates, chi phí hệ thống sẽ giảm đáng kể mà không ảnh hưởng đến chất lượng ra quyết định.','Nếu thêm Google authentication, external spam và unauthorized access sẽ bị loại bỏ hoàn toàn.','Nếu giới thiệu role-based access, data governance và internal collaboration sẽ được cải thiện đáng kể.'],
+    secSolution:'🏗️ Solution Design',
+    archTitle:'7.1 System & Access Flow Architecture',
+    archBody:'Hai kiến trúc được cân nhắc: (a) Authentication sau khi UI load, (b) Authentication tại access-control layer trước khi fetch data. Phương án được chọn: Request interception và validation trước khi serve dashboard data + email-based allowlist check sau Google authentication.',
+    authTitle:'7.2 Authentication & Authorization',
+    a:['Google Sign-In làm authentication method','Validate user email against an allowlist','Admin role: quản lý whitelist và approve access requests','Viewer role: read-only access','Unauthorized users → "Access Denied" screen + request access flow'],
+    uiTitle:'7.3 UI & Admin Management',
+    u:['Login screen với Google authentication','Access denied và request access screens','Admin dashboard: quản lý whitelist (add/remove)','Assign roles và approve/reject access requests','Giảm phụ thuộc vào Engineering cho access management'],
+    secCollab:'🤝 Collaboration',
+    collabTitle:'Phối hợp với',
+    c:['Engineering: authentication flow, request interception, data update scheduling','Stakeholders: xác định ai nên có admin vs. viewer access'],
+    respTitle:'Trách nhiệm của tôi',
+    r:['Xác định access control rules và roles','Quyết định update frequency strategy','Căn chỉnh solution với cost, security, và usability goals'],
+    secImpact:'📈 Impact & Learnings',
+    bizTitle:'Business & Technical Outcomes',
+    bt:['Infrastructure cost giảm và ổn định sau implementation','Unauthorized external access bị loại bỏ hoàn toàn','Sensitive revenue và product metrics được bảo mật'],
+    opsTitle:'Operational Outcomes',
+    ot:['Admin rights được delegate cho trusted users','Admins có thể tự quản lý: add/remove viewers, approve requests','Giảm phụ thuộc vào Engineering cho access management'],
+    learningTitle:'Key Learning',
+    learningBody:'Security và cost considerations phải được coi là product requirements, không phải technical afterthoughts. Not all analytics require real-time data to be valuable — đây là insight quan trọng giúp giải quyết cả 2 vấn đề cost và security cùng lúc.',
+    nextTitle:'Next Steps',
+    next:['Introduce finer-grained permissions by data type','Add audit logs for access changes','Consider SSO expansion if dashboard usage scales across teams'],
+  },
+  en: {
+    back:'← Back', backAll:'All Projects', prevProj:'← Case Study 02',
+    title:'Data Dashboard Authentication',
+    summary:'Solved a critical 8x cost spike and sensitive data exposure by designing a Google Auth + role-based access control system for an internal analytics dashboard — reducing infrastructure costs 8x after implementation.',
+    metaStatus:'✅ Shipped — cost reduced 8x',
+    secContext:'🔍 Context & Problem',
+    contextTitle:'Context', contextBody:'An internal analytics dashboard built on Vercel was initially designed only for the product team. After the second major update — adding Time to Value and North Star Metric data — the system experienced a sudden and significant cost increase.',
+    problemTitle:'Trigger', problemBody:'After the second update, cost jumped from <strong>~$3.1/query</strong> to <strong>$24/query</strong> — nearly 8x increase. The dashboard remained publicly accessible, with external traffic and automated requests causing excessive data queries and cost escalation.',
+    issuesTitle:'Core Issues Identified',
+    issues:['Dashboard publicly accessible with no access control','External traffic and automated requests causing excessive queries','Sensitive data (revenue, North Star Metric) exposed without authorization','No role-based access management for internal stakeholders','Real-time updates triggering unnecessary frequent recomputation and data fetches'],
+    secCost:'💸 Cost Impact',
+    cost:['Initial cost / query','After 2nd update (before fix)','After implementing authentication','Cost reduction achieved'],
+    secHypo:'💡 Hypotheses',
+    h:['If real-time updates are reduced to scheduled updates, system cost will decrease significantly without impacting decision quality.','If Google authentication is added, external spam and unauthorized access will be eliminated.','If role-based access is introduced, data governance and internal collaboration will improve.'],
+    secSolution:'🏗️ Solution Design',
+    archTitle:'7.1 System & Access Flow Architecture',
+    archBody:'Two architectural options were explored: (a) Authentication handled after UI load, (b) Authentication enforced at the access-control layer before data fetch. The chosen approach: Request interception and validation before serving dashboard data + email-based allowlist check after Google authentication.',
+    authTitle:'7.2 Authentication & Authorization',
+    a:['Implemented Google Sign-In as the authentication method','Validated user email against an allowlist','Admin role: manage whitelist and approve access requests','Viewer role: read-only access to dashboard','Unauthorized users redirected to "Access Denied" screen + request access flow'],
+    uiTitle:'7.3 UI & Admin Management',
+    u:['Login screen with Google authentication','Access denied and request access screens','Admin dashboard: manage whitelist (add/remove users)','Assign roles and approve/reject access requests','Reduced engineering dependency for access management'],
+    secCollab:'🤝 Collaboration',
+    collabTitle:'Collaborated with',
+    c:['Engineering: authentication flow, request interception, data update scheduling','Stakeholders: defining who should have admin vs. viewer access'],
+    respTitle:'My Responsibilities',
+    r:['Define access control rules and roles','Decide update frequency strategy','Align solution with cost, security, and usability goals'],
+    secImpact:'📈 Impact & Learnings',
+    bizTitle:'Business & Technical Outcomes',
+    bt:['Infrastructure cost reduced and stabilized after implementation','Unauthorized external access fully eliminated','Sensitive revenue and product metrics secured'],
+    opsTitle:'Operational Outcomes',
+    ot:['Admin rights delegated to a limited set of trusted users','Admins can independently: add/remove viewers, approve access requests','Reduced dependency on engineering for access management'],
+    learningTitle:'Key Learning',
+    learningBody:'Security and cost considerations must be treated as product requirements, not technical afterthoughts. Not all analytics require real-time data to be valuable — this insight resolved both the cost and security problems simultaneously.',
+    nextTitle:'Next Steps',
+    next:['Introduce finer-grained permissions by data type','Add audit logs for access changes','Consider SSO expansion if dashboard usage scales across teams'],
+  }
+};
+
+function applyD3Lang(lang) {
+  const t = d3i18n[lang];
+  const set = (id, v, isHTML) => { const el = document.getElementById(id); if(el){ if(isHTML) el.innerHTML=v; else el.textContent=v; } };
+
+  set('back-text',t.back); set('back-all',t.backAll); set('prev-proj',t.prevProj);
+  set('detail-title',t.title); set('detail-summary',t.summary); set('meta-status',t.metaStatus);
+  set('sec-context',t.secContext);
+  set('context-title',t.contextTitle); set('context-body',t.contextBody);
+  set('problem-title',t.problemTitle); set('problem-body',t.problemBody,true);
+  set('issues-title',t.issuesTitle); t.issues.forEach((v,i)=>set(`i${i+1}`,v));
+  set('sec-cost',t.secCost); t.cost.forEach((v,i)=>set(`cost${i+1}-label`,v));
+  set('sec-hypo',t.secHypo); t.h.forEach((v,i)=>set(`h${i+1}`,v));
+  set('sec-solution',t.secSolution);
+  set('arch-title',t.archTitle); set('arch-body',t.archBody);
+  set('auth-title',t.authTitle); t.a.forEach((v,i)=>set(`a${i+1}`,v));
+  set('ui-title',t.uiTitle); t.u.forEach((v,i)=>set(`u${i+1}`,v));
+  set('sec-collab',t.secCollab);
+  set('collab-title',t.collabTitle); t.c.forEach((v,i)=>set(`c${i+1}`,v));
+  set('resp-title',t.respTitle); t.r.forEach((v,i)=>set(`r${i+1}`,v));
+  set('sec-impact',t.secImpact);
+  set('biz-title',t.bizTitle); t.bt.forEach((v,i)=>set(`bt${i+1}`,v));
+  set('ops-title',t.opsTitle); t.ot.forEach((v,i)=>set(`ot${i+1}`,v));
+  set('learning-title',t.learningTitle); set('learning-body',t.learningBody);
+  set('next-title',t.nextTitle); t.next.forEach((v,i)=>set(`n${i+1}`,v));
+
+  const nl = i18n[lang].nav;
+  set('nav-about',nl.about); set('nav-skills',nl.skills); set('nav-exp',nl.experience); set('nav-proj',nl.projects); set('nav-contact',nl.contact);
+  set('footer-text',i18n[lang].footer);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('portfolio-lang') || 'vi';
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === savedLang);
+    btn.addEventListener('click', () => {
+      const l = btn.dataset.lang;
+      localStorage.setItem('portfolio-lang', l);
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+      applyD3Lang(l);
+    });
+  });
+  applyD3Lang(savedLang);
+  observeFadeIn();
+});
+</script>
+</body>
+</html>

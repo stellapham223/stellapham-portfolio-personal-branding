@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Automation Flow — Stella Pham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="detail-page">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">stella<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about" class="nav-link" id="nav-about">Giới thiệu</a></li>
+      <li><a href="../index.html#skills" class="nav-link" id="nav-skills">Kỹ năng</a></li>
+      <li><a href="../index.html#experience" class="nav-link" id="nav-exp">Kinh nghiệm</a></li>
+      <li><a href="../index.html#projects" class="nav-link" id="nav-proj">Dự án</a></li>
+      <li><a href="../index.html#contact" class="nav-link" id="nav-contact">Liên hệ</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="vi">VI</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="detail-hero">
+  <div class="container">
+    <a href="../index.html#projects" class="detail-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span id="back-text">Quay lại</span>
+    </a>
+    <div class="detail-icon">📧</div>
+    <div class="detail-tag" id="case-tag">Case Study 01</div>
+    <h1 class="detail-title" id="detail-title">Email Automation Flow</h1>
+    <p class="detail-summary" id="detail-summary">
+      Thiết kế luồng email tự động theo milestone cho Shopify SaaS — xác định điểm nghẽn activation, lập trình logic event-driven, và đo lường để giảm uninstall sớm và cải thiện chuyển đổi free→paid.
+    </p>
+    <div class="detail-meta">
+      <span class="detail-meta-tag" id="meta-role">📌 PM / Product Marketing</span>
+      <span class="detail-meta-tag">🏢 Avada Group</span>
+      <span class="detail-meta-tag">🛍️ Shopify SaaS</span>
+      <span class="detail-meta-tag" id="meta-status">🔬 Design complete — awaiting implementation</span>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="detail-body">
+  <div class="container">
+
+    <!-- CONTEXT + PROBLEM -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-context">🔍 Context & Problem</h2>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="card-context-title">Context</h3>
+          <p id="card-context-body">Tôi owned toàn bộ giai đoạn planning và design cho luồng email automation theo milestone của một Shopify SaaS subscription app tại Avada Group. Đây là một trong những ưu tiên chiến lược để giảm churn sớm và cải thiện activation.</p>
+        </div>
+        <div class="detail-card">
+          <h3 id="card-problem-title">Core Problem</h3>
+          <p id="card-problem-body">Merchants không đạt <strong>Time to Value</strong> đủ nhanh. Họ không được hướng dẫn qua một hành trình rõ ràng theo milestone → dẫn đến uninstall sớm trong 7 ngày đầu và tỷ lệ trial-to-paid thấp.</p>
+        </div>
+      </div>
+      <div class="detail-card fade-in" style="margin-top:24px;">
+        <h3 id="card-symptoms-title">Biểu hiện vấn đề</h3>
+        <ul>
+          <li id="sym1">Tỷ lệ uninstall cao trong 7 ngày đầu sau khi cài app</li>
+          <li id="sym2">Nhiều merchant không tạo được subscription product đầu tiên</li>
+          <li id="sym3">Không phát sinh subscription order nào trong giai đoạn trial</li>
+          <li id="sym4">Ảnh hưởng trực tiếp đến: Activation rate, Churn rate, Revenue và upsell</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GOALS & KPIs -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-goals">🎯 Goals & KPIs</h2>
+      <div class="detail-grid detail-grid-3 fade-in">
+        <div class="detail-card">
+          <h3 id="goal-marketing-title">Marketing Goals</h3>
+          <ul>
+            <li id="mg1">Tăng mức độ tương tác của merchant</li>
+            <li id="mg2">Gửi thông tin có giá trị đúng thời điểm</li>
+          </ul>
+          <div style="margin-top:16px; font-size:0.78rem; color:var(--accent);">
+            KPI: Open rate · Click-through rate
+          </div>
+        </div>
+        <div class="detail-card">
+          <h3 id="goal-product-title">Product / UX Goals</h3>
+          <ul>
+            <li id="pg1">Giảm tỷ lệ uninstall trong ngày 1 và ngày 7</li>
+            <li id="pg2">Giảm churn rate tổng thể</li>
+            <li id="pg3">Rút ngắn Time to Value (TTV)</li>
+          </ul>
+          <div style="margin-top:16px; font-size:0.78rem; color:var(--accent);">
+            KPI: Uninstall Day-1 · Uninstall Day-7 · TTV
+          </div>
+        </div>
+        <div class="detail-card">
+          <h3 id="goal-business-title">Business Goals</h3>
+          <ul>
+            <li id="bg1">Cải thiện tỷ lệ chuyển đổi free→paid</li>
+            <li id="bg2">Tăng upsell lên gói pricing cao hơn</li>
+          </ul>
+          <div style="margin-top:16px; font-size:0.78rem; color:var(--accent);">
+            KPI: Trial-to-paid rate · Upsell conversion rate
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HYPOTHESES -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-hypo">💡 Hypotheses</h2>
+      <div class="hypothesis-grid fade-in">
+        <div class="hypothesis-card">
+          <div class="hypothesis-label">H1</div>
+          <p id="h1">Nếu merchant nhận được phản hồi và hướng dẫn ngay khi đạt milestone quan trọng, họ sẽ có nhiều khả năng tiếp tục sử dụng app hơn.</p>
+        </div>
+        <div class="hypothesis-card">
+          <div class="hypothesis-label">H2</div>
+          <p id="h2">Can thiệp kịp thời khi merchant không đạt milestone trong khoảng thời gian dự kiến sẽ giảm churn sớm.</p>
+        </div>
+        <div class="hypothesis-card">
+          <div class="hypothesis-label">H3</div>
+          <p id="h3">Tất cả các mục tiêu (marketing, product, business) được căn chỉnh theo một merchant lifecycle duy nhất — đảm bảo nhất quán trong toàn bộ hành trình.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- USER STORY -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-userstory">👤 User Story & Acceptance Criteria</h2>
+      <div class="user-story-list fade-in">
+        <div class="user-story-card">
+          <div class="user-story-role" id="us-role">As a merchant who has just installed the app...</div>
+          <p id="us-story">Tôi muốn được hướng dẫn rõ ràng về các bước tiếp theo để tôi có thể tạo subscription product đầu tiên một cách nhanh chóng và tự tin.</p>
+        </div>
+      </div>
+      <div class="detail-card fade-in" style="margin-top:20px;">
+        <h3 id="ac-title">Acceptance Criteria</h3>
+        <ul>
+          <li id="ac1">Email được trigger ngay sau khi cài đặt app</li>
+          <li id="ac2">Nội dung được personalize dựa trên trạng thái của merchant</li>
+          <li id="ac3">CTA rõ ràng, dẫn merchant đến hành động tiếp theo có ý nghĩa nhất</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COLLABORATION -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-collab">🤝 Delivery & Collaboration</h2>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="collab-with-title">Phối hợp với</h3>
+          <ul>
+            <li id="collab1">Engineering: event tracking và trigger logic</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3 id="my-role-title">Trách nhiệm của tôi</h3>
+          <ul>
+            <li id="resp1">Xác định milestone logic và success criteria</li>
+            <li id="resp2">Lập kế hoạch nội dung email và thứ tự sequence</li>
+            <li id="resp3">Ưu tiên hóa automation flows và phases</li>
+            <li id="resp4">Đưa ra quyết định scope và trade-off: MVP vs. future iterations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPACT -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-impact">📈 Expected Impact & Measurement</h2>
+      <div class="impact-highlight fade-in">
+        <h3 id="expected-title">Expected Outcomes</h3>
+        <p id="expected-body">Dự án bao gồm measurement design rõ ràng. Kết quả kỳ vọng: giảm tỷ lệ uninstall trong 7 ngày đầu, rút ngắn thời gian tạo subscription đầu tiên, cải thiện trial-to-paid conversion.</p>
+      </div>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="measure-title">Measurement Approach</h3>
+          <ul>
+            <li id="m1">Cohort comparison: trước và sau khi rollout</li>
+            <li id="m2">Theo dõi thời gian trung bình tới subscription đầu tiên</li>
+            <li id="m3">% merchant có subscription order trong 30 ngày</li>
+            <li id="m4">Upsell conversion rate gắn với milestone completion</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3 id="next-title">Next Iteration</h3>
+          <ul>
+            <li id="n1">Segment merchants theo activation speed (fast vs. slow activators)</li>
+            <li id="n2">Personalize automation flows theo từng segment</li>
+            <li id="n3">Mở rộng milestone-based logic sang in-app messaging và onboarding checklists</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="detail-nav">
+      <a href="../index.html#projects">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span id="back-all">Tất cả dự án</span>
+      </a>
+      <a href="project-2.html">
+        <span id="next-proj">Case Study 02 →</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p id="footer-text">© 2025 Stella Pham. Built with ❤️</p>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+// Detail page language overrides
+const detailI18n = {
+  vi: {
+    back: '← Quay lại',
+    backAll: 'Tất cả dự án',
+    nextProj: 'Case Study 02 →',
+    caseTag: 'Case Study 01',
+    summary: 'Thiết kế luồng email tự động theo milestone cho Shopify SaaS — xác định điểm nghẽn activation, lập trình logic event-driven, và đo lường để giảm uninstall sớm và cải thiện chuyển đổi free→paid.',
+    metaRole: '📌 PM / Product Marketing',
+    metaStatus: '🔬 Design complete — awaiting implementation',
+    secContext: '🔍 Context & Problem',
+    cardContextTitle: 'Context',
+    cardContextBody: 'Tôi owned toàn bộ giai đoạn planning và design cho luồng email automation theo milestone của một Shopify SaaS subscription app tại Avada Group. Đây là một trong những ưu tiên chiến lược để giảm churn sớm và cải thiện activation.',
+    cardProblemTitle: 'Core Problem',
+    cardProblemBody: 'Merchants không đạt <strong>Time to Value</strong> đủ nhanh. Họ không được hướng dẫn qua một hành trình rõ ràng theo milestone → dẫn đến uninstall sớm trong 7 ngày đầu và tỷ lệ trial-to-paid thấp.',
+    cardSymptomsTitle: 'Biểu hiện vấn đề',
+    sym: ['Tỷ lệ uninstall cao trong 7 ngày đầu sau khi cài app','Nhiều merchant không tạo được subscription product đầu tiên','Không phát sinh subscription order nào trong giai đoạn trial','Ảnh hưởng trực tiếp đến: Activation rate, Churn rate, Revenue và upsell'],
+    secGoals: '🎯 Goals & KPIs',
+    goalMarketing: 'Marketing Goals', mg: ['Tăng mức độ tương tác của merchant','Gửi thông tin có giá trị đúng thời điểm'],
+    goalProduct: 'Product / UX Goals', pg: ['Giảm tỷ lệ uninstall trong ngày 1 và ngày 7','Giảm churn rate tổng thể','Rút ngắn Time to Value (TTV)'],
+    goalBusiness: 'Business Goals', bg: ['Cải thiện tỷ lệ chuyển đổi free→paid','Tăng upsell lên gói pricing cao hơn'],
+    secHypo: '💡 Hypotheses',
+    h: [
+      'Nếu merchant nhận được phản hồi và hướng dẫn ngay khi đạt milestone quan trọng, họ sẽ có nhiều khả năng tiếp tục sử dụng app hơn.',
+      'Can thiệp kịp thời khi merchant không đạt milestone trong khoảng thời gian dự kiến sẽ giảm churn sớm.',
+      'Tất cả các mục tiêu (marketing, product, business) được căn chỉnh theo một merchant lifecycle duy nhất.'
+    ],
+    secUserStory: '👤 User Story & Acceptance Criteria',
+    usRole: 'Là một merchant vừa cài app...',
+    usStory: 'Tôi muốn được hướng dẫn rõ ràng về các bước tiếp theo để có thể tạo subscription product đầu tiên một cách nhanh chóng và tự tin.',
+    acTitle: 'Acceptance Criteria',
+    ac: ['Email được trigger ngay sau khi cài đặt app','Nội dung được personalize dựa trên trạng thái của merchant','CTA rõ ràng, dẫn merchant đến hành động tiếp theo có ý nghĩa nhất'],
+    secCollab: '🤝 Delivery & Collaboration',
+    collabWithTitle: 'Phối hợp với',
+    collab: ['Engineering: event tracking và trigger logic'],
+    myRoleTitle: 'Trách nhiệm của tôi',
+    resp: ['Xác định milestone logic và success criteria','Lập kế hoạch nội dung email và thứ tự sequence','Ưu tiên hóa automation flows và phases','Đưa ra quyết định scope và trade-off: MVP vs. future iterations'],
+    secImpact: '📈 Expected Impact & Measurement',
+    expectedTitle: 'Expected Outcomes',
+    expectedBody: 'Dự án bao gồm measurement design rõ ràng. Kết quả kỳ vọng: giảm tỷ lệ uninstall trong 7 ngày đầu, rút ngắn thời gian tạo subscription đầu tiên, cải thiện trial-to-paid conversion.',
+    measureTitle: 'Measurement Approach',
+    measure: ['Cohort comparison: trước và sau khi rollout','Theo dõi thời gian trung bình tới subscription đầu tiên','% merchant có subscription order trong 30 ngày','Upsell conversion rate gắn với milestone completion'],
+    nextTitle: 'Next Iteration',
+    next: ['Segment merchants theo activation speed (fast vs. slow activators)','Personalize automation flows theo từng segment','Mở rộng milestone-based logic sang in-app messaging và onboarding checklists'],
+  },
+  en: {
+    back: '← Back',
+    backAll: 'All Projects',
+    nextProj: 'Case Study 02 →',
+    caseTag: 'Case Study 01',
+    summary: 'Designed a milestone-based email automation flow for a Shopify SaaS product — identified activation bottlenecks, defined event-driven trigger logic, and built a measurement framework to reduce early uninstalls and improve free-to-paid conversion.',
+    metaRole: '📌 PM / Product Marketing',
+    metaStatus: '🔬 Design complete — awaiting implementation',
+    secContext: '🔍 Context & Problem',
+    cardContextTitle: 'Context',
+    cardContextBody: 'I owned the full planning and design phase for a milestone-based email automation flow for a Shopify SaaS subscription app at Avada Group. This was a strategic priority to reduce early churn and improve activation.',
+    cardProblemTitle: 'Core Problem',
+    cardProblemBody: 'Merchants were not reaching <strong>Time to Value</strong> fast enough. They were not guided through a clear, milestone-based journey → leading to early uninstalls within the first 7 days and low trial-to-paid conversion.',
+    cardSymptomsTitle: 'Symptoms',
+    sym: ['High uninstall rate within the first 7 days of installation','Many merchants never create their first subscription product','No subscription orders generated during the trial period','Direct impact on: Activation rate, Churn rate, Revenue and upsell'],
+    secGoals: '🎯 Goals & KPIs',
+    goalMarketing: 'Marketing Goals', mg: ['Increase merchant engagement','Deliver timely and valuable information'],
+    goalProduct: 'Product / UX Goals', pg: ['Reduce Day-1 and Day-7 uninstall rates','Reduce overall churn rate','Shorten Time to Value (TTV)'],
+    goalBusiness: 'Business Goals', bg: ['Improve free-to-paid conversion rate','Increase upsell to higher pricing plans'],
+    secHypo: '💡 Hypotheses',
+    h: [
+      'If merchants receive immediate feedback and guidance when reaching key milestones, they are more likely to continue using the app.',
+      'Timely intervention when merchants fail to reach milestones within expected timeframes will reduce early churn.',
+      'All goals are aligned along a single merchant lifecycle — ensuring consistency throughout the entire journey.'
+    ],
+    secUserStory: '👤 User Story & Acceptance Criteria',
+    usRole: 'As a merchant who has just installed the app...',
+    usStory: 'I want clear guidance on my next steps so that I can create my first subscription product quickly and confidently.',
+    acTitle: 'Acceptance Criteria',
+    ac: ['Email triggered immediately after installation','Content personalized based on merchant status','Clear CTA directing the merchant to the next meaningful action'],
+    secCollab: '🤝 Delivery & Collaboration',
+    collabWithTitle: 'Collaborated with',
+    collab: ['Engineering: event tracking and trigger logic'],
+    myRoleTitle: 'My Responsibilities',
+    resp: ['Define milestone logic and success criteria','Plan email content and sequencing','Prioritize automation flows and phases','Make scope and trade-off decisions for MVP vs. future iterations'],
+    secImpact: '📈 Expected Impact & Measurement',
+    expectedTitle: 'Expected Outcomes',
+    expectedBody: 'The project includes a clear measurement design. Expected results: reduced uninstall rate within the first 7 days, shorter time to first subscription creation, improved trial-to-paid conversion.',
+    measureTitle: 'Measurement Approach',
+    measure: ['Cohort comparison before and after rollout','Track average time to first subscription creation','% of merchants with a first subscription order within 30 days','Upsell conversion rates tied to milestone completion'],
+    nextTitle: 'Next Iteration',
+    next: ['Segment merchants based on activation speed (fast vs. slow activators)','Personalize automation flows by segment','Extend milestone-based logic to in-app messaging and onboarding checklists'],
+  }
+};
+
+function applyDetailLang(lang) {
+  const t = detailI18n[lang];
+  const setText = (id, html, isHTML) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (isHTML) el.innerHTML = html; else el.textContent = html;
+  };
+
+  setText('back-text', t.back);
+  setText('back-all', t.backAll);
+  setText('next-proj', t.nextProj);
+  setText('case-tag', t.caseTag);
+  setText('detail-summary', t.summary);
+  setText('meta-role', t.metaRole);
+  setText('meta-status', t.metaStatus);
+  setText('sec-context', t.secContext);
+  setText('card-context-title', t.cardContextTitle);
+  setText('card-context-body', t.cardContextBody, true);
+  setText('card-problem-title', t.cardProblemTitle);
+  setText('card-problem-body', t.cardProblemBody, true);
+  setText('card-symptoms-title', t.cardSymptomsTitle);
+  t.sym.forEach((s, i) => setText(`sym${i+1}`, s));
+  setText('sec-goals', t.secGoals);
+  setText('goal-marketing-title', t.goalMarketing);
+  t.mg.forEach((s, i) => setText(`mg${i+1}`, s));
+  setText('goal-product-title', t.goalProduct);
+  t.pg.forEach((s, i) => setText(`pg${i+1}`, s));
+  setText('goal-business-title', t.goalBusiness);
+  t.bg.forEach((s, i) => setText(`bg${i+1}`, s));
+  setText('sec-hypo', t.secHypo);
+  t.h.forEach((s, i) => setText(`h${i+1}`, s));
+  setText('sec-userstory', t.secUserStory);
+  setText('us-role', t.usRole);
+  setText('us-story', t.usStory);
+  setText('ac-title', t.acTitle);
+  t.ac.forEach((s, i) => setText(`ac${i+1}`, s));
+  setText('sec-collab', t.secCollab);
+  setText('collab-with-title', t.collabWithTitle);
+  t.collab.forEach((s, i) => setText(`collab${i+1}`, s));
+  setText('my-role-title', t.myRoleTitle);
+  t.resp.forEach((s, i) => setText(`resp${i+1}`, s));
+  setText('sec-impact', t.secImpact);
+  setText('expected-title', t.expectedTitle);
+  setText('expected-body', t.expectedBody);
+  setText('measure-title', t.measureTitle);
+  t.measure.forEach((s, i) => setText(`m${i+1}`, s));
+  setText('next-title', t.nextTitle);
+  t.next.forEach((s, i) => setText(`n${i+1}`, s));
+
+  // Nav labels
+  const nl = i18n[lang].nav;
+  setText('nav-about', nl.about);
+  setText('nav-skills', nl.skills);
+  setText('nav-exp', nl.experience);
+  setText('nav-proj', nl.projects);
+  setText('nav-contact', nl.contact);
+
+  setText('footer-text', i18n[lang].footer);
+}
+
+// Override applyLang for this page
+const _origApplyLang = window.__detailOverridden;
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('portfolio-lang') || 'vi';
+  // override buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === savedLang);
+    btn.addEventListener('click', () => {
+      const l = btn.dataset.lang;
+      localStorage.setItem('portfolio-lang', l);
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+      applyDetailLang(l);
+    });
+  });
+  applyDetailLang(savedLang);
+  observeFadeIn();
+});
+</script>
+</body>
+</html>

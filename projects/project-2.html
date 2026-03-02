@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cross-App Promotion Dashboard — Stella Pham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="detail-page">
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">stella<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about" class="nav-link" id="nav-about">Giới thiệu</a></li>
+      <li><a href="../index.html#skills" class="nav-link" id="nav-skills">Kỹ năng</a></li>
+      <li><a href="../index.html#experience" class="nav-link" id="nav-exp">Kinh nghiệm</a></li>
+      <li><a href="../index.html#projects" class="nav-link" id="nav-proj">Dự án</a></li>
+      <li><a href="../index.html#contact" class="nav-link" id="nav-contact">Liên hệ</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="vi">VI</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="detail-hero">
+  <div class="container">
+    <a href="../index.html#projects" class="detail-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span id="back-text">Quay lại</span>
+    </a>
+    <div class="detail-icon">📊</div>
+    <div class="detail-tag">Case Study 02</div>
+    <h1 class="detail-title" id="detail-title">Data Dashboard — Cross-App Promotion</h1>
+    <p class="detail-summary" id="detail-summary">
+      Xây dựng hệ thống đo lường hiệu quả cross-app promotion trên Looker Studio — biến chiến lược "funnel app" từ quyết định cảm tính thành hệ thống product có thể đo lường được.
+    </p>
+    <div class="detail-meta">
+      <span class="detail-meta-tag">📌 Product Analytics</span>
+      <span class="detail-meta-tag">🏢 Avada Group</span>
+      <span class="detail-meta-tag">🛠️ Looker Studio · BigQuery</span>
+      <span class="detail-meta-tag" id="meta-status">✅ Launched & in use</span>
+    </div>
+  </div>
+</div>
+
+<div class="detail-body">
+  <div class="container">
+
+    <!-- CONTEXT -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-context">🔍 Context & Problem</h2>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="card-context-title">Strategic Context</h3>
+          <p id="card-context-body">Tại Avada, một phần sứ mệnh chiến lược của team tôi là xây dựng "funnel apps" — những app không tối ưu cho doanh thu trực tiếp mà nhằm mục tiêu tạo traffic và drive installs cho các app khác trong hệ sinh thái Avada. Tôi owned initiative để đưa visibility và measurement vào chiến lược này.</p>
+        </div>
+        <div class="detail-card">
+          <h3 id="card-problem-title">Core Problem</h3>
+          <p id="card-problem-body">Không có hệ thống tập trung để đo hiệu quả cross-app promotion. Team không thể trả lời: Solar apps mang lại bao nhiêu installs cho các app khác? Traffic từ Solar apps có convert tốt không? Chúng tôi đang ra quyết định chiến lược <strong>mà không có bằng chứng đo lường được.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFRAMING -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-reframe">🧠 Problem Reframing</h2>
+      <div class="impact-highlight fade-in">
+        <h3 id="reframe-title">Bước đầu tiên không phải là build dashboard</h3>
+        <p id="reframe-body">Bước đầu tiên là định nghĩa "cross-app promotion hiệu quả" có nghĩa là gì. Tôi framed lại xung quanh 2 câu hỏi cơ bản: (1) Solar apps mang lại bao nhiêu installs cho toàn hệ sinh thái Avada? (2) Traffic từ Solar apps có convert tốt không? (Traffic → Install Conversion Rate). Điều này đã biến cross-app promotion từ một growth tactic mơ hồ thành một product system có thể đo lường được.</p>
+      </div>
+    </div>
+
+    <!-- METRICS MODEL -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-metrics">📐 Measurement Model</h2>
+      <div class="kpi-grid fade-in">
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi1-val">Total Installs</div>
+          <div class="kpi-label" id="kpi1-label">Tổng installs được drive bởi Solar apps</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi2-val">Install Rate</div>
+          <div class="kpi-label" id="kpi2-label">% Traffic → Install Conversion Rate</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi3-val">By Target App</div>
+          <div class="kpi-label" id="kpi3-label">App nào nhận được nhiều installs nhất</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi4-val">By Source App</div>
+          <div class="kpi-label" id="kpi4-label">Solar app nào tạo ra nhiều installs nhất</div>
+        </div>
+      </div>
+      <div class="detail-grid fade-in" style="margin-top:24px;">
+        <div class="detail-card">
+          <h3 id="demand-title">Demand Side — Which apps receive installs?</h3>
+          <ul>
+            <li id="d1">Phân tích số lượng installs mỗi Avada app nhận được từ Solar apps</li>
+            <li id="d2">Xác định app nào được hưởng lợi nhiều nhất từ cross-promotion</li>
+            <li id="d3">Hỗ trợ điều chỉnh chiến lược placement và ưu tiên</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3 id="supply-title">Supply Side — Which apps generate installs?</h3>
+          <ul>
+            <li id="s1">Xác định Solar app nào là funnel driver mạnh nhất</li>
+            <li id="s2">Phát hiện underperforming funnels</li>
+            <li id="s3">Hỗ trợ quyết định đầu tư tiếp tục hay tối ưu hóa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- USER STORIES -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-userstory">👤 User Stories</h2>
+      <div class="user-story-list fade-in">
+        <div class="user-story-card">
+          <div class="user-story-role">As a CEO...</div>
+          <p id="us1">Tôi muốn xem tổng số installs được tạo ra trên toàn hệ sinh thái bởi Solar apps để đánh giá xem chiến lược funnel-app có đang mang lại giá trị chiến lược đo lường được không.</p>
+        </div>
+        <div class="user-story-card">
+          <div class="user-story-role">As a Product Marketer...</div>
+          <p id="us2">Tôi muốn thấy Solar app placement nào tạo ra install rate cao nhất để tối ưu messaging và positioning của cross-promotion.</p>
+        </div>
+        <div class="user-story-card">
+          <div class="user-story-role" id="pm-role">As a PM of the Solar team...</div>
+          <p id="us3">Tôi muốn xem traffic-to-install conversion rate từ Solar apps để đo lường hiệu quả thiết kế funnel, không chỉ là raw traffic volume.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELIVERY -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-delivery">🛠️ Delivery</h2>
+      <div class="detail-card fade-in">
+        <h3 id="delivery-title">Dashboard Features (Looker Studio)</h3>
+        <ul>
+          <li id="df1">Dynamic date filtering</li>
+          <li id="df2">Install trend visualization</li>
+          <li id="df3">Comparison vs. previous period</li>
+          <li id="df4">Segmented breakdown by source app và target app (Pie charts)</li>
+          <li id="df5">Data integration across the Avada ecosystem</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- IMPACT -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-impact">📈 Impact</h2>
+      <div class="impact-highlight fade-in">
+        <h3 id="impact-shift-title">The Strategic Shift</h3>
+        <p id="impact-shift-body">"We think it helps" → <strong>"We know exactly how much it contributes."</strong></p>
+      </div>
+      <div class="detail-grid fade-in">
+        <div class="detail-card">
+          <h3 id="biz-impact-title">Business Impact</h3>
+          <ul>
+            <li id="bi1">Cross-app promotion performance trở nên minh bạch và đo lường được</li>
+            <li id="bi2">Leadership có visibility vào ecosystem-level growth contribution</li>
+            <li id="bi3">Funnel apps có thể được đánh giá dựa trên install volume contribution và conversion efficiency</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3 id="ops-impact-title">Operational Impact</h3>
+          <ul>
+            <li id="oi1">Teams có thể xác định high-performing Solar apps</li>
+            <li id="oi2">Phát hiện underperforming funnels kịp thời</li>
+            <li id="oi3">Tối ưu placement và traffic strategy dựa trên data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-nav">
+      <a href="project-1.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span id="prev-proj">← Case Study 01</span>
+      </a>
+      <a href="../index.html#projects">
+        <span id="back-all">Tất cả dự án</span>
+      </a>
+      <a href="project-3.html">
+        <span id="next-proj">Case Study 03 →</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<footer><p id="footer-text">© 2025 Stella Pham. Built with ❤️</p></footer>
+
+<script src="../js/main.js"></script>
+<script>
+const detailI18n2 = {
+  vi: {
+    back: '← Quay lại', backAll: 'Tất cả dự án', prevProj: '← Case Study 01', nextProj: 'Case Study 03 →',
+    title: 'Data Dashboard — Cross-App Promotion',
+    summary: 'Xây dựng hệ thống đo lường hiệu quả cross-app promotion trên Looker Studio — biến chiến lược "funnel app" từ quyết định cảm tính thành hệ thống product có thể đo lường được.',
+    metaStatus: '✅ Launched & in use',
+    secContext: '🔍 Context & Problem',
+    contextTitle: 'Strategic Context',
+    contextBody: 'Tại Avada, một phần sứ mệnh chiến lược của team tôi là xây dựng "funnel apps" — những app không tối ưu cho doanh thu trực tiếp mà nhằm mục tiêu tạo traffic và drive installs cho các app khác trong hệ sinh thái Avada. Tôi owned initiative để đưa visibility và measurement vào chiến lược này.',
+    problemTitle: 'Core Problem',
+    problemBody: 'Không có hệ thống tập trung để đo hiệu quả cross-app promotion. Team không thể trả lời: Solar apps mang lại bao nhiêu installs cho các app khác? Traffic từ Solar apps có convert tốt không? Chúng tôi đang ra quyết định chiến lược <strong>mà không có bằng chứng đo lường được.</strong>',
+    secReframe: '🧠 Problem Reframing',
+    reframeTitle: 'Bước đầu tiên không phải là build dashboard',
+    reframeBody: 'Bước đầu tiên là định nghĩa "cross-app promotion hiệu quả" có nghĩa là gì. Tôi framed lại xung quanh 2 câu hỏi cơ bản: (1) Solar apps mang lại bao nhiêu installs cho toàn hệ sinh thái Avada? (2) Traffic từ Solar apps có convert tốt không? Điều này đã biến cross-app promotion từ một growth tactic mơ hồ thành một product system có thể đo lường được.',
+    secMetrics: '📐 Measurement Model',
+    kpi1val: 'Total Installs', kpi1label: 'Tổng installs được drive bởi Solar apps',
+    kpi2val: 'Install Rate', kpi2label: '% Traffic → Install Conversion Rate',
+    kpi3val: 'By Target App', kpi3label: 'App nào nhận được nhiều installs nhất',
+    kpi4val: 'By Source App', kpi4label: 'Solar app nào tạo ra nhiều installs nhất',
+    demandTitle: 'Demand Side — App nhận installs',
+    d: ['Phân tích số lượng installs mỗi Avada app nhận được từ Solar apps','Xác định app nào được hưởng lợi nhiều nhất từ cross-promotion','Hỗ trợ điều chỉnh chiến lược placement và ưu tiên'],
+    supplyTitle: 'Supply Side — App tạo installs',
+    s: ['Xác định Solar app nào là funnel driver mạnh nhất','Phát hiện underperforming funnels','Hỗ trợ quyết định đầu tư tiếp tục hay tối ưu hóa'],
+    secUserStory: '👤 User Stories',
+    us: ['Tôi muốn xem tổng số installs được tạo ra trên toàn hệ sinh thái bởi Solar apps để đánh giá xem chiến lược funnel-app có đang mang lại giá trị chiến lược đo lường được không.','Tôi muốn thấy Solar app placement nào tạo ra install rate cao nhất để tối ưu messaging và positioning của cross-promotion.','Tôi muốn xem traffic-to-install conversion rate từ Solar apps để đo lường hiệu quả thiết kế funnel, không chỉ là raw traffic volume.'],
+    pmRole: 'Là PM của Solar team...',
+    secDelivery: '🛠️ Delivery',
+    deliveryTitle: 'Dashboard Features (Looker Studio)',
+    df: ['Dynamic date filtering','Install trend visualization','Comparison vs. previous period','Segmented breakdown by source app và target app (Pie charts)','Data integration across the Avada ecosystem'],
+    secImpact: '📈 Impact',
+    impactShiftTitle: 'The Strategic Shift',
+    impactShiftBody: '"We think it helps" → <strong>"We know exactly how much it contributes."</strong>',
+    bizImpactTitle: 'Business Impact',
+    bi: ['Cross-app promotion performance trở nên minh bạch và đo lường được','Leadership có visibility vào ecosystem-level growth contribution','Funnel apps có thể được đánh giá dựa trên install volume contribution và conversion efficiency'],
+    opsImpactTitle: 'Operational Impact',
+    oi: ['Teams có thể xác định high-performing Solar apps','Phát hiện underperforming funnels kịp thời','Tối ưu placement và traffic strategy dựa trên data'],
+  },
+  en: {
+    back: '← Back', backAll: 'All Projects', prevProj: '← Case Study 01', nextProj: 'Case Study 03 →',
+    title: 'Data Dashboard — Cross-App Promotion',
+    summary: 'Built a cross-app promotion measurement system in Looker Studio — turning the "funnel app" strategy from intuition-based decisions into a transparent, measurable product system.',
+    metaStatus: '✅ Launched & in use',
+    secContext: '🔍 Context & Problem',
+    contextTitle: 'Strategic Context',
+    contextBody: "At Avada, one of my team's strategic missions is to build \"funnel apps\" — apps not optimized for direct revenue but designed to generate traffic and drive installs for other apps in the Avada ecosystem. I owned the initiative to bring visibility and measurement to this strategy.",
+    problemTitle: 'Core Problem',
+    problemBody: 'There was no centralized system to measure cross-app promotion effectiveness. The team could not answer: How many installs do Solar apps generate? Is the traffic converting well? We were making strategic decisions <strong>without measurable evidence.</strong>',
+    secReframe: '🧠 Problem Reframing',
+    reframeTitle: 'The first step was not building a dashboard',
+    reframeBody: 'The first step was defining what "effective cross-app promotion" actually means. I framed it around two fundamental questions: (1) How many installs do Solar apps bring to the entire Avada ecosystem? (2) Does traffic from Solar apps convert well? This reframed cross-app promotion from a vague growth tactic into a measurable product system.',
+    secMetrics: '📐 Measurement Model',
+    kpi1val: 'Total Installs', kpi1label: 'Total installs driven by Solar apps',
+    kpi2val: 'Install Rate', kpi2label: '% Traffic → Install Conversion Rate',
+    kpi3val: 'By Target App', kpi3label: 'Which apps receive the most installs',
+    kpi4val: 'By Source App', kpi4label: 'Which Solar apps generate the most installs',
+    demandTitle: 'Demand Side — Which apps receive installs?',
+    d: ['Analyze install count each Avada app receives from Solar apps','Identify which apps benefit most from cross-promotion','Inform placement strategy and prioritization adjustments'],
+    supplyTitle: 'Supply Side — Which apps generate installs?',
+    s: ['Identify strongest Solar app funnel drivers','Detect underperforming funnels','Inform investment and optimization decisions'],
+    secUserStory: '👤 User Stories',
+    us: ['I want to see the total number of installs generated across the ecosystem by Solar apps so that I can evaluate whether our funnel-app strategy is delivering measurable strategic value.','I want to see which Solar app placements generate the highest install rate so that I can optimize cross-promotion messaging and positioning.','I want to see the traffic-to-install conversion rate from Solar apps so that I can measure the efficiency of our funnel design, not just raw traffic volume.'],
+    pmRole: 'As a PM of the Solar team...',
+    secDelivery: '🛠️ Delivery',
+    deliveryTitle: 'Dashboard Features (Looker Studio)',
+    df: ['Dynamic date filtering','Install trend visualization','Comparison vs. previous period','Segmented breakdown by source app and target app (Pie charts)','Data integration across the Avada ecosystem'],
+    secImpact: '📈 Impact',
+    impactShiftTitle: 'The Strategic Shift',
+    impactShiftBody: '"We think it helps" → <strong>"We know exactly how much it contributes."</strong>',
+    bizImpactTitle: 'Business Impact',
+    bi: ['Cross-app promotion performance became measurable and transparent','Leadership gained visibility into ecosystem-level growth contribution','Funnel apps can now be evaluated on install volume contribution and conversion efficiency'],
+    opsImpactTitle: 'Operational Impact',
+    oi: ['Teams can identify high-performing Solar apps','Detect underperforming funnels early','Optimize placement and traffic strategy based on data'],
+  }
+};
+
+function applyDetail2Lang(lang) {
+  const t = detailI18n2[lang];
+  const set = (id, v, isHTML) => { const el = document.getElementById(id); if (el) { if (isHTML) el.innerHTML = v; else el.textContent = v; } };
+
+  set('back-text', t.back); set('back-all', t.backAll); set('prev-proj', t.prevProj); set('next-proj', t.nextProj);
+  set('detail-title', t.title); set('detail-summary', t.summary); set('meta-status', t.metaStatus);
+  set('sec-context', t.secContext); set('card-context-title', t.contextTitle); set('card-context-body', t.contextBody, true);
+  set('card-problem-title', t.problemTitle); set('card-problem-body', t.problemBody, true);
+  set('sec-reframe', t.secReframe); set('reframe-title', t.reframeTitle); set('reframe-body', t.reframeBody);
+  set('sec-metrics', t.secMetrics);
+  set('kpi1-val', t.kpi1val); set('kpi1-label', t.kpi1label);
+  set('kpi2-val', t.kpi2val); set('kpi2-label', t.kpi2label);
+  set('kpi3-val', t.kpi3val); set('kpi3-label', t.kpi3label);
+  set('kpi4-val', t.kpi4val); set('kpi4-label', t.kpi4label);
+  set('demand-title', t.demandTitle); t.d.forEach((v,i) => set(`d${i+1}`, v));
+  set('supply-title', t.supplyTitle); t.s.forEach((v,i) => set(`s${i+1}`, v));
+  set('sec-userstory', t.secUserStory);
+  t.us.forEach((v,i) => set(`us${i+1}`, v));
+  set('pm-role', t.pmRole);
+  set('sec-delivery', t.secDelivery); set('delivery-title', t.deliveryTitle);
+  t.df.forEach((v,i) => set(`df${i+1}`, v));
+  set('sec-impact', t.secImpact);
+  set('impact-shift-title', t.impactShiftTitle); set('impact-shift-body', t.impactShiftBody, true);
+  set('biz-impact-title', t.bizImpactTitle); t.bi.forEach((v,i) => set(`bi${i+1}`, v));
+  set('ops-impact-title', t.opsImpactTitle); t.oi.forEach((v,i) => set(`oi${i+1}`, v));
+
+  const nl = i18n[lang].nav;
+  set('nav-about', nl.about); set('nav-skills', nl.skills); set('nav-exp', nl.experience); set('nav-proj', nl.projects); set('nav-contact', nl.contact);
+  set('footer-text', i18n[lang].footer);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('portfolio-lang') || 'vi';
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === savedLang);
+    btn.addEventListener('click', () => {
+      const l = btn.dataset.lang;
+      localStorage.setItem('portfolio-lang', l);
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+      applyDetail2Lang(l);
+    });
+  });
+  applyDetail2Lang(savedLang);
+  observeFadeIn();
+});
+</script>
+</body>
+</html>
