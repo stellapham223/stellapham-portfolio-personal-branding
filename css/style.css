@@ -693,38 +693,91 @@ nav {
    ============================================= */
 #skills { background: var(--bg); }
 
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  perspective: 1200px;
+}
 .skill-category-full { grid-column: 1 / -1; }
 
 .skill-category {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 28px;
-  transition: all var(--transition);
   position: relative; overflow: hidden;
+  cursor: default;
+  transition: transform 0.12s ease-out,
+              box-shadow 0.12s ease-out;
+  z-index: 0;
+  isolation: isolate;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale(1);
 }
-/* Retro corner accent */
-.skill-category::before {
+
+/* Colored base backgrounds */
+.skill-category:nth-child(1) {
+  background: #1a2340;
+  border: 1px solid rgba(80,120,255,0.25);
+}
+.skill-category:nth-child(2) {
+  background: #261428;
+  border: 1px solid rgba(209,0,144,0.25);
+}
+.skill-category:nth-child(3) {
+  background: #1e2a14;
+  border: 1px solid rgba(120,200,80,0.22);
+}
+.skill-category:nth-child(4) {
+  background: #1e1a10;
+  border: 1px solid rgba(255,200,87,0.2);
+}
+
+/* Spotlight overlay (mouse gradient) */
+.skill-category::after {
   content: '';
-  position: absolute; top: 0; left: 0;
-  width: 4px; height: 100%;
-  background: var(--yellow);
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    350px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255,255,255,0.11) 0%,
+    transparent 65%
+  );
   opacity: 0;
-  transition: opacity var(--transition);
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 1;
 }
-.skill-category:hover {
-  border-color: rgba(255,200,87,0.3);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 4px 4px 0 rgba(255,200,87,0.15);
+.skill-category.is-tilting::after { opacity: 1; }
+
+/* Content sits above the overlay */
+.skill-category > * { position: relative; z-index: 2; }
+
+.skill-category.is-tilting {
+  box-shadow: 0 30px 80px rgba(0,0,0,0.65), 0 2px 0 rgba(255,255,255,0.08) inset;
+  z-index: 10;
 }
-.skill-category:hover::before { opacity: 1; }
+
+/* Per-card accent colors */
+.skill-category:nth-child(1) .skill-cat-icon svg { stroke: #7a9fff; }
+.skill-category:nth-child(1) .skill-cat-name { color: #7a9fff; }
+
+.skill-category:nth-child(2) .skill-cat-icon svg { stroke: var(--magenta); }
+.skill-category:nth-child(2) .skill-cat-name { color: #f060c0; }
+
+.skill-category:nth-child(3) .skill-cat-icon svg { stroke: #82d44b; }
+.skill-category:nth-child(3) .skill-cat-name { color: #82d44b; }
+
+.skill-category:nth-child(4) .skill-cat-icon svg { stroke: var(--yellow); }
+.skill-category:nth-child(4) .skill-cat-name { color: var(--yellow); }
 
 .skill-cat-icon { font-size: 1.6rem; margin-bottom: 12px; }
+.skill-cat-icon svg { width: 28px; height: 28px; }
 .skill-cat-name {
   font-family: var(--font-primary);
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--yellow);
+  text-transform: uppercase;
   margin-bottom: 18px;
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -741,6 +794,23 @@ nav {
   border-color: rgba(255,200,87,0.4);
   color: var(--yellow);
   background: rgba(255,200,87,0.08);
+}
+
+/* Per-card tag hover: override color to match card accent */
+.skill-category:nth-child(1) .skill-tag:hover {
+  color: #7a9fff;
+  border-color: rgba(122,159,255,0.45);
+  background: rgba(122,159,255,0.08);
+}
+.skill-category:nth-child(2) .skill-tag:hover {
+  color: #f060c0;
+  border-color: rgba(240,96,192,0.45);
+  background: rgba(240,96,192,0.08);
+}
+.skill-category:nth-child(3) .skill-tag:hover {
+  color: #82d44b;
+  border-color: rgba(130,212,75,0.45);
+  background: rgba(130,212,75,0.08);
 }
 .skill-tag.tool {
   background: rgba(30,42,120,0.5);
@@ -1181,13 +1251,31 @@ footer {
 }
 
 /* =============================================
-   FADE IN
+   FADE IN / SLIDE IN
    ============================================= */
 .fade-in {
   opacity: 0; transform: translateY(20px);
   transition: opacity 0.55s ease, transform 0.55s ease;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.slide-left {
+  opacity: 0; transform: translateX(-60px);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.slide-left.visible { opacity: 1; transform: translateX(0); }
+
+.slide-right {
+  opacity: 0; transform: translateX(60px);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.slide-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Stagger delays for child elements */
+.slide-left:nth-child(1), .slide-right:nth-child(1) { transition-delay: 0.05s; }
+.slide-left:nth-child(2), .slide-right:nth-child(2) { transition-delay: 0.15s; }
+.slide-left:nth-child(3), .slide-right:nth-child(3) { transition-delay: 0.25s; }
+.slide-left:nth-child(4), .slide-right:nth-child(4) { transition-delay: 0.35s; }
 
 /* =============================================
    RESPONSIVE

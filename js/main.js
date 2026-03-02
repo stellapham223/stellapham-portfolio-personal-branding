@@ -274,7 +274,7 @@ function applyExperience(lang) {
   if (!container) return;
   const items = experienceData[lang];
   container.innerHTML = items.map((item, i) => `
-    <div class="timeline-item fade-in">
+    <div class="timeline-item ${i % 2 === 0 ? 'slide-left' : 'slide-right'}">
       <div class="timeline-dot"></div>
       <div class="timeline-card">
         <div class="timeline-header">
@@ -357,8 +357,8 @@ function applyProjects(lang) {
   if (!container) return;
   const items = projectsData[lang];
   const viewText = i18n[lang].projects.view;
-  container.innerHTML = items.map(p => `
-    <div class="project-card fade-in" onclick="window.location.href='${p.link}'">
+  container.innerHTML = items.map((p, i) => `
+    <div class="project-card ${i % 2 === 0 ? 'slide-left' : 'slide-right'}" onclick="window.location.href='${p.link}'">
       <div class="project-num">Case Study ${p.num}</div>
       <div class="project-icon">${p.icon}</div>
       <div class="project-title">${p.title}</div>
@@ -375,7 +375,7 @@ function applyProjects(lang) {
 }
 
 // =============================================
-//  INTERSECTION OBSERVER (fade-in)
+//  INTERSECTION OBSERVER (fade-in + slide-in)
 // =============================================
 function observeFadeIn() {
   const observer = new IntersectionObserver((entries) => {
@@ -385,9 +385,58 @@ function observeFadeIn() {
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12 });
 
-  document.querySelectorAll('.fade-in:not(.visible)').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in:not(.visible), .slide-left:not(.visible), .slide-right:not(.visible)')
+    .forEach(el => observer.observe(el));
+}
+
+// =============================================
+//  SKILL CARD TILT + SPOTLIGHT
+// =============================================
+function initSkillSpotlight() {
+  const MAX_TILT = 14;   // degrees
+  const SCALE    = 1.07; // zoom amount
+
+  document.querySelectorAll('.skill-category').forEach(card => {
+    let rafId = null;
+
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('is-tilting');
+      card.style.transition = 'transform 0.12s ease-out, box-shadow 0.12s ease-out';
+    });
+
+    card.addEventListener('mousemove', e => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        // Normalized -1 to 1
+        const nx = ((e.clientX - rect.left) / rect.width)  * 2 - 1;
+        const ny = ((e.clientY - rect.top)  / rect.height) * 2 - 1;
+
+        const rotY =  nx * MAX_TILT;  // lean left-right
+        const rotX = -ny * MAX_TILT;  // lean up-down
+
+        card.style.transform =
+          `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${SCALE})`;
+
+        // Spotlight
+        const px = ((e.clientX - rect.left) / rect.width)  * 100;
+        const py = ((e.clientY - rect.top)  / rect.height) * 100;
+        card.style.setProperty('--mx', px + '%');
+        card.style.setProperty('--my', py + '%');
+      });
+    });
+
+    const resetCard = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      card.classList.remove('is-tilting');
+      card.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1), box-shadow 0.45s cubic-bezier(0.4,0,0.2,1)';
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+    };
+
+    card.addEventListener('mouseleave', resetCard);
+  });
 }
 
 // =============================================
@@ -413,4 +462,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial language
   applyLang(currentLang);
   observeFadeIn();
+  initSkillSpotlight();
 });
