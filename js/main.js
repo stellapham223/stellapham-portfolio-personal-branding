@@ -305,7 +305,7 @@ const projectsData = {
       title: 'Email Automation Flow',
       summary: 'Thiết kế luồng email tự động theo milestone cho Shopify SaaS — giảm tỷ lệ uninstall trong 7 ngày đầu và cải thiện chuyển đổi free→paid.',
       tags: ['Email/CRM', 'SaaS', 'Lifecycle', 'Shopify'],
-      link: 'projects/project-1.html'
+      link: 'projects/email-automation-flow.html'
     },
     {
       num: '02',
@@ -313,7 +313,7 @@ const projectsData = {
       title: 'Dashboard Cross-App Promotion',
       summary: 'Xây dựng hệ thống đo lường cross-app promotion trên Looker Studio — biến chiến lược "funnel app" từ cảm tính thành dữ liệu minh bạch.',
       tags: ['Looker Studio', 'BigQuery', 'Analytics', 'Dashboard'],
-      link: 'projects/project-2.html'
+      link: 'projects/cross-app-promotion-dashboard.html'
     },
     {
       num: '03',
@@ -321,7 +321,7 @@ const projectsData = {
       title: 'Dashboard Authentication',
       summary: 'Giải quyết vấn đề cost spike và lộ dữ liệu nhạy cảm bằng cách thiết kế hệ thống xác thực Google Auth + role-based access cho dashboard nội bộ.',
       tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
-      link: 'projects/project-3.html'
+      link: 'projects/dashboard-authentication.html'
     }
   ],
   en: [
@@ -331,7 +331,7 @@ const projectsData = {
       title: 'Email Automation Flow',
       summary: 'Designed a milestone-based email automation flow for a Shopify SaaS product — reducing early uninstall rates and improving free-to-paid conversion.',
       tags: ['Email/CRM', 'SaaS', 'Lifecycle', 'Shopify'],
-      link: 'projects/project-1.html'
+      link: 'projects/email-automation-flow.html'
     },
     {
       num: '02',
@@ -339,7 +339,7 @@ const projectsData = {
       title: 'Cross-App Promotion Dashboard',
       summary: 'Built a cross-app promotion measurement system in Looker Studio — turning the "funnel app" strategy from intuition to transparent, measurable data.',
       tags: ['Looker Studio', 'BigQuery', 'Analytics', 'Dashboard'],
-      link: 'projects/project-2.html'
+      link: 'projects/cross-app-promotion-dashboard.html'
     },
     {
       num: '03',
@@ -347,7 +347,7 @@ const projectsData = {
       title: 'Dashboard Authentication',
       summary: 'Solved a critical cost spike and sensitive data exposure by designing a Google Auth + role-based access control system for an internal analytics dashboard.',
       tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
-      link: 'projects/project-3.html'
+      link: 'projects/dashboard-authentication.html'
     }
   ]
 };
