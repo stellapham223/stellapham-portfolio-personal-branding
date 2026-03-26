@@ -284,6 +284,9 @@
       <a href="../index.html#projects">
         <span id="back-all">Tất cả dự án</span>
       </a>
+      <a href="competitor-stalker.html">
+        <span id="next-proj">Case Study 04 →</span>
+      </a>
     </div>
 
   </div>
@@ -295,7 +298,7 @@
 <script>
 const d3i18n = {
   vi: {
-    back:'← Quay lại', backAll:'Tất cả dự án', prevProj:'← Case Study 02',
+    back:'← Quay lại', backAll:'Tất cả dự án', prevProj:'← Case Study 02', nextProj:'Case Study 04 →',
     title:'Data Dashboard Authentication',
     summary:'Giải quyết cost spike 8x và lộ dữ liệu nhạy cảm bằng cách thiết kế hệ thống Google Auth + role-based access control cho internal analytics dashboard — giảm chi phí xuống 8 lần sau khi triển khai.',
     metaStatus:'✅ Shipped — cost reduced 8x',
@@ -344,7 +347,7 @@ const d3i18n = {
     next:['Introduce finer-grained permissions by data type','Add audit logs for access changes','Consider SSO expansion if dashboard usage scales across teams'],
   },
   en: {
-    back:'← Back', backAll:'All Projects', prevProj:'← Case Study 02',
+    back:'← Back', backAll:'All Projects', prevProj:'← Case Study 02', nextProj:'Case Study 04 →',
     title:'Data Dashboard Authentication',
     summary:'Solved a critical 8x cost spike and sensitive data exposure by designing a Google Auth + role-based access control system for an internal analytics dashboard — reducing infrastructure costs 8x after implementation.',
     metaStatus:'✅ Shipped — cost reduced 8x',
@@ -398,7 +401,7 @@ function applyD3Lang(lang) {
   const t = d3i18n[lang];
   const set = (id, v, isHTML) => { const el = document.getElementById(id); if(el){ if(isHTML) el.innerHTML=v; else el.textContent=v; } };
 
-  set('back-text',t.back); set('back-all',t.backAll); set('prev-proj',t.prevProj);
+  set('back-text',t.back); set('back-all',t.backAll); set('prev-proj',t.prevProj); set('next-proj',t.nextProj);
   set('detail-title',t.title); set('detail-summary',t.summary); set('meta-status',t.metaStatus);
   set('sec-context',t.secContext);
   set('context-title',t.contextTitle); set('context-body',t.contextBody);

@@ -322,6 +322,14 @@ const projectsData = {
       summary: 'Giải quyết vấn đề cost spike và lộ dữ liệu nhạy cảm bằng cách thiết kế hệ thống xác thực Google Auth + role-based access cho dashboard nội bộ.',
       tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
       link: 'projects/dashboard-authentication.html'
+    },
+    {
+      num: '04',
+      icon: '🔍',
+      title: 'Competitor Stalker',
+      summary: 'Xây dựng nền tảng SaaS full-stack theo dõi đối thủ trên Shopify App Store — từ ý tưởng đến production với quy trình Agentic AI và 17 AI agent chuyên biệt.',
+      tags: ['Agentic AI', 'Claude Code', 'Next.js', 'Firebase'],
+      link: 'projects/competitor-stalker.html'
     }
   ],
   en: [
@@ -348,6 +356,14 @@ const projectsData = {
       summary: 'Solved a critical cost spike and sensitive data exposure by designing a Google Auth + role-based access control system for an internal analytics dashboard.',
       tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
       link: 'projects/dashboard-authentication.html'
+    },
+    {
+      num: '04',
+      icon: '🔍',
+      title: 'Competitor Stalker',
+      summary: 'Built a full-stack SaaS platform to track competitor changes on Shopify App Store — from idea to production using an Agentic AI workflow with 17 specialized AI agents.',
+      tags: ['Agentic AI', 'Claude Code', 'Next.js', 'Firebase'],
+      link: 'projects/competitor-stalker.html'
     }
   ]
 };
