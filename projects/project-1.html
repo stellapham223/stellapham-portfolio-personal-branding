@@ -177,6 +177,35 @@
       </div>
     </div>
 
+    <!-- DELIVERABLES -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-deliverables">📦 Deliverables</h2>
+
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="deliverable-flow-title">Email Automation Flow</h3>
+        <p id="deliverable-flow-desc" style="margin-bottom:16px;">Sơ đồ luồng email theo milestone — mỗi email được trigger dựa trên hành vi và trạng thái của merchant trong lifecycle.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/email-flow.png" alt="Email Automation Flow Diagram" style="width:100%; display:block;" />
+        </div>
+      </div>
+
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="deliverable-template-title">Email Template (HTML)</h3>
+        <p id="deliverable-template-desc" style="margin-bottom:16px;">Welcome email template — thiết kế theo brand guidelines của Joy Subscriptions, tương thích với các email client phổ biến.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15); background:#f5f5f5;">
+          <img src="../assets/projects/email-template.png" alt="Welcome Email Template" style="width:100%; max-width:600px; display:block; margin:0 auto;" />
+        </div>
+      </div>
+
+      <div class="detail-card fade-in">
+        <h3 id="deliverable-skill-title">Email Template SKILL</h3>
+        <p id="deliverable-skill-desc" style="margin-bottom:16px;">Chuyển template thành SKILL cho Claude Code — giúp cả team tạo email mới đồng bộ về brand, layout và cấu trúc HTML mà không cần lặp lại hướng dẫn.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/email-skill.png" alt="Email Template SKILL for Claude Code" style="width:100%; display:block;" />
+        </div>
+      </div>
+    </div>
+
     <!-- IMPACT -->
     <div class="detail-section">
       <h2 class="detail-section-title" id="sec-impact">📈 Expected Impact & Measurement</h2>
@@ -262,6 +291,13 @@ const detailI18n = {
     collab: ['Engineering: event tracking và trigger logic'],
     myRoleTitle: 'Trách nhiệm của tôi',
     resp: ['Xác định milestone logic và success criteria','Lập kế hoạch nội dung email và thứ tự sequence','Ưu tiên hóa automation flows và phases','Đưa ra quyết định scope và trade-off: MVP vs. future iterations'],
+    secDeliverables: '📦 Deliverables',
+    deliverableFlowTitle: 'Email Automation Flow',
+    deliverableFlowDesc: 'Sơ đồ luồng email theo milestone — mỗi email được trigger dựa trên hành vi và trạng thái của merchant trong lifecycle.',
+    deliverableTemplateTitle: 'Email Template (HTML)',
+    deliverableTemplateDesc: 'Welcome email template — thiết kế theo brand guidelines của Joy Subscriptions, tương thích với các email client phổ biến.',
+    deliverableSkillTitle: 'Email Template SKILL',
+    deliverableSkillDesc: 'Chuyển template thành SKILL cho Claude Code — giúp cả team tạo email mới đồng bộ về brand, layout và cấu trúc HTML mà không cần lặp lại hướng dẫn.',
     secImpact: '📈 Expected Impact & Measurement',
     expectedTitle: 'Expected Outcomes',
     expectedBody: 'Dự án bao gồm measurement design rõ ràng. Kết quả kỳ vọng: giảm tỷ lệ uninstall trong 7 ngày đầu, rút ngắn thời gian tạo subscription đầu tiên, cải thiện trial-to-paid conversion.',
@@ -305,6 +341,13 @@ const detailI18n = {
     collab: ['Engineering: event tracking and trigger logic'],
     myRoleTitle: 'My Responsibilities',
     resp: ['Define milestone logic and success criteria','Plan email content and sequencing','Prioritize automation flows and phases','Make scope and trade-off decisions for MVP vs. future iterations'],
+    secDeliverables: '📦 Deliverables',
+    deliverableFlowTitle: 'Email Automation Flow',
+    deliverableFlowDesc: 'Milestone-based email flow diagram — each email is triggered based on merchant behavior and lifecycle status.',
+    deliverableTemplateTitle: 'Email Template (HTML)',
+    deliverableTemplateDesc: 'Welcome email template — designed following Joy Subscriptions brand guidelines, compatible with major email clients.',
+    deliverableSkillTitle: 'Email Template SKILL',
+    deliverableSkillDesc: 'Converted the template into a Claude Code SKILL — enabling the whole team to generate brand-consistent emails without repeating instructions.',
     secImpact: '📈 Expected Impact & Measurement',
     expectedTitle: 'Expected Outcomes',
     expectedBody: 'The project includes a clear measurement design. Expected results: reduced uninstall rate within the first 7 days, shorter time to first subscription creation, improved trial-to-paid conversion.',
@@ -356,6 +399,13 @@ function applyDetailLang(lang) {
   t.collab.forEach((s, i) => setText(`collab${i+1}`, s));
   setText('my-role-title', t.myRoleTitle);
   t.resp.forEach((s, i) => setText(`resp${i+1}`, s));
+  setText('sec-deliverables', t.secDeliverables);
+  setText('deliverable-flow-title', t.deliverableFlowTitle);
+  setText('deliverable-flow-desc', t.deliverableFlowDesc);
+  setText('deliverable-template-title', t.deliverableTemplateTitle);
+  setText('deliverable-template-desc', t.deliverableTemplateDesc);
+  setText('deliverable-skill-title', t.deliverableSkillTitle);
+  setText('deliverable-skill-desc', t.deliverableSkillDesc);
   setText('sec-impact', t.secImpact);
   setText('expected-title', t.expectedTitle);
   setText('expected-body', t.expectedBody);

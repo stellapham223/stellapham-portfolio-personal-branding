@@ -174,6 +174,65 @@
       </div>
     </div>
 
+    <!-- DELIVERABLES -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-deliverables">📦 Deliverables</h2>
+
+      <!-- 1. Auth Flow -->
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="del-flow-title">Authentication Flow</h3>
+        <p id="del-flow-desc" style="margin-bottom:16px;">Sơ đồ luồng xác thực tổng quan — từ Google Sign-In, allowlist check, đến role-based routing cho Admin và Viewer.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/auth-flow.png" alt="Authentication Flow Diagram" style="width:100%; display:block;" />
+        </div>
+      </div>
+
+      <!-- 2. Login Screen -->
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="del-login-title">Login Screen</h3>
+        <p id="del-login-desc" style="margin-bottom:16px;">Màn hình đăng nhập — user xác thực qua Google Sign-In trước khi truy cập dashboard.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15); background:#f5f5f5;">
+          <img src="../assets/projects/auth-login.png" alt="Login Screen" style="width:100%; max-width:600px; display:block; margin:0 auto;" />
+        </div>
+      </div>
+
+      <!-- 3. Access Request -->
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="del-request-title">Access Request</h3>
+        <p id="del-request-desc" style="margin-bottom:16px;">Trang yêu cầu quyền truy cập — hiển thị khi user đã đăng nhập nhưng chưa có trong whitelist.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15); background:#f5f5f5;">
+          <img src="../assets/projects/auth-access-request.png" alt="Access Request Page" style="width:100%; max-width:600px; display:block; margin:0 auto;" />
+        </div>
+      </div>
+
+      <!-- 4. Request Sent -->
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="del-sent-title">Access Request Sent</h3>
+        <p id="del-sent-desc" style="margin-bottom:16px;">Xác nhận yêu cầu đã được gửi — user chờ admin approve trước khi có thể truy cập dashboard.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15); background:#f5f5f5;">
+          <img src="../assets/projects/auth-request-sent.png" alt="Access Request Sent Confirmation" style="width:100%; max-width:600px; display:block; margin:0 auto;" />
+        </div>
+      </div>
+
+      <!-- 5. Admin: Manage Requests -->
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="del-admin-requests-title">Admin — Access Requests Management</h3>
+        <p id="del-admin-requests-desc" style="margin-bottom:16px;">Giao diện admin quản lý access requests — approve hoặc reject yêu cầu truy cập từ users.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/auth-admin-requests.png" alt="Admin Access Requests Management" style="width:100%; display:block;" />
+        </div>
+      </div>
+
+      <!-- 6. Admin: Manage Whitelist -->
+      <div class="detail-card fade-in">
+        <h3 id="del-admin-whitelist-title">Admin — Manage Whitelist</h3>
+        <p id="del-admin-whitelist-desc" style="margin-bottom:16px;">Giao diện admin quản lý whitelist — add/remove users và assign roles (Admin/Viewer).</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/auth-admin-whitelist.png" alt="Admin Manage Whitelist" style="width:100%; display:block;" />
+        </div>
+      </div>
+    </div>
+
     <!-- IMPACT -->
     <div class="detail-section">
       <h2 class="detail-section-title" id="sec-impact">📈 Impact & Learnings</h2>
@@ -253,6 +312,19 @@ const d3i18n = {
     c:['Engineering: authentication flow, request interception, data update scheduling','Stakeholders: xác định ai nên có admin vs. viewer access'],
     respTitle:'Trách nhiệm của tôi',
     r:['Xác định access control rules và roles','Quyết định update frequency strategy','Căn chỉnh solution với cost, security, và usability goals'],
+    secDeliverables:'📦 Deliverables',
+    delFlowTitle:'Authentication Flow',
+    delFlowDesc:'Sơ đồ luồng xác thực tổng quan — từ Google Sign-In, allowlist check, đến role-based routing cho Admin và Viewer.',
+    delLoginTitle:'Login Screen',
+    delLoginDesc:'Màn hình đăng nhập — user xác thực qua Google Sign-In trước khi truy cập dashboard.',
+    delRequestTitle:'Access Request',
+    delRequestDesc:'Trang yêu cầu quyền truy cập — hiển thị khi user đã đăng nhập nhưng chưa có trong whitelist.',
+    delSentTitle:'Access Request Sent',
+    delSentDesc:'Xác nhận yêu cầu đã được gửi — user chờ admin approve trước khi có thể truy cập dashboard.',
+    delAdminRequestsTitle:'Admin — Quản lý Access Requests',
+    delAdminRequestsDesc:'Giao diện admin quản lý access requests — approve hoặc reject yêu cầu truy cập từ users.',
+    delAdminWhitelistTitle:'Admin — Quản lý Whitelist',
+    delAdminWhitelistDesc:'Giao diện admin quản lý whitelist — add/remove users và assign roles (Admin/Viewer).',
     secImpact:'📈 Impact & Learnings',
     bizTitle:'Business & Technical Outcomes',
     bt:['Infrastructure cost giảm và ổn định sau implementation','Unauthorized external access bị loại bỏ hoàn toàn','Sensitive revenue và product metrics được bảo mật'],
@@ -289,6 +361,19 @@ const d3i18n = {
     c:['Engineering: authentication flow, request interception, data update scheduling','Stakeholders: defining who should have admin vs. viewer access'],
     respTitle:'My Responsibilities',
     r:['Define access control rules and roles','Decide update frequency strategy','Align solution with cost, security, and usability goals'],
+    secDeliverables:'📦 Deliverables',
+    delFlowTitle:'Authentication Flow',
+    delFlowDesc:'Overall authentication flow diagram — from Google Sign-In, allowlist check, to role-based routing for Admin and Viewer.',
+    delLoginTitle:'Login Screen',
+    delLoginDesc:'Login screen — users authenticate via Google Sign-In before accessing the dashboard.',
+    delRequestTitle:'Access Request',
+    delRequestDesc:'Access request page — displayed when a user is authenticated but not yet on the whitelist.',
+    delSentTitle:'Access Request Sent',
+    delSentDesc:'Request sent confirmation — user waits for admin approval before gaining dashboard access.',
+    delAdminRequestsTitle:'Admin — Access Requests Management',
+    delAdminRequestsDesc:'Admin interface for managing access requests — approve or reject access requests from users.',
+    delAdminWhitelistTitle:'Admin — Manage Whitelist',
+    delAdminWhitelistDesc:'Admin interface for managing the whitelist — add/remove users and assign roles (Admin/Viewer).',
     secImpact:'📈 Impact & Learnings',
     bizTitle:'Business & Technical Outcomes',
     bt:['Infrastructure cost reduced and stabilized after implementation','Unauthorized external access fully eliminated','Sensitive revenue and product metrics secured'],
@@ -320,6 +405,13 @@ function applyD3Lang(lang) {
   set('sec-collab',t.secCollab);
   set('collab-title',t.collabTitle); t.c.forEach((v,i)=>set(`c${i+1}`,v));
   set('resp-title',t.respTitle); t.r.forEach((v,i)=>set(`r${i+1}`,v));
+  set('sec-deliverables',t.secDeliverables);
+  set('del-flow-title',t.delFlowTitle); set('del-flow-desc',t.delFlowDesc);
+  set('del-login-title',t.delLoginTitle); set('del-login-desc',t.delLoginDesc);
+  set('del-request-title',t.delRequestTitle); set('del-request-desc',t.delRequestDesc);
+  set('del-sent-title',t.delSentTitle); set('del-sent-desc',t.delSentDesc);
+  set('del-admin-requests-title',t.delAdminRequestsTitle); set('del-admin-requests-desc',t.delAdminRequestsDesc);
+  set('del-admin-whitelist-title',t.delAdminWhitelistTitle); set('del-admin-whitelist-desc',t.delAdminWhitelistDesc);
   set('sec-impact',t.secImpact);
   set('biz-title',t.bizTitle); t.bt.forEach((v,i)=>set(`bt${i+1}`,v));
   set('ops-title',t.opsTitle); t.ot.forEach((v,i)=>set(`ot${i+1}`,v));

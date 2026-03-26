@@ -151,6 +151,27 @@
       </div>
     </div>
 
+    <!-- DELIVERABLES -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-deliverables">📦 Deliverables</h2>
+
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="deliverable-wireframe-title">Wireframe Dashboard</h3>
+        <p id="deliverable-wireframe-desc" style="margin-bottom:16px;">Wireframe ban đầu — định hình layout, metrics và cấu trúc dữ liệu trước khi build trên Looker Studio.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15); background:#f5f5f5;">
+          <img src="../assets/projects/dashboard-wireframe.png" alt="Dashboard Wireframe" style="width:100%; display:block;" />
+        </div>
+      </div>
+
+      <div class="detail-card fade-in">
+        <h3 id="deliverable-final-title">Dashboard hoàn thiện</h3>
+        <p id="deliverable-final-desc" style="margin-bottom:16px;">Dashboard hoàn thiện trên Looker Studio — hiển thị cross-app promotion performance với dynamic filtering và segmented breakdown.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/dashboard-final.png" alt="Final Data Dashboard" style="width:100%; display:block;" />
+        </div>
+      </div>
+    </div>
+
     <!-- IMPACT -->
     <div class="detail-section">
       <h2 class="detail-section-title" id="sec-impact">📈 Impact</h2>
@@ -227,6 +248,11 @@ const detailI18n2 = {
     secDelivery: '🛠️ Delivery',
     deliveryTitle: 'Dashboard Features (Looker Studio)',
     df: ['Dynamic date filtering','Install trend visualization','Comparison vs. previous period','Segmented breakdown by source app và target app (Pie charts)','Data integration across the Avada ecosystem'],
+    secDeliverables: '📦 Deliverables',
+    deliverableWireframeTitle: 'Wireframe Dashboard',
+    deliverableWireframeDesc: 'Wireframe ban đầu — định hình layout, metrics và cấu trúc dữ liệu trước khi build trên Looker Studio.',
+    deliverableFinalTitle: 'Dashboard hoàn thiện',
+    deliverableFinalDesc: 'Dashboard hoàn thiện trên Looker Studio — hiển thị cross-app promotion performance với dynamic filtering và segmented breakdown.',
     secImpact: '📈 Impact',
     impactShiftTitle: 'The Strategic Shift',
     impactShiftBody: '"We think it helps" → <strong>"We know exactly how much it contributes."</strong>',
@@ -263,6 +289,11 @@ const detailI18n2 = {
     secDelivery: '🛠️ Delivery',
     deliveryTitle: 'Dashboard Features (Looker Studio)',
     df: ['Dynamic date filtering','Install trend visualization','Comparison vs. previous period','Segmented breakdown by source app and target app (Pie charts)','Data integration across the Avada ecosystem'],
+    secDeliverables: '📦 Deliverables',
+    deliverableWireframeTitle: 'Dashboard Wireframe',
+    deliverableWireframeDesc: 'Initial wireframe — defining layout, metrics and data structure before building on Looker Studio.',
+    deliverableFinalTitle: 'Final Dashboard',
+    deliverableFinalDesc: 'Completed dashboard on Looker Studio — displaying cross-app promotion performance with dynamic filtering and segmented breakdown.',
     secImpact: '📈 Impact',
     impactShiftTitle: 'The Strategic Shift',
     impactShiftBody: '"We think it helps" → <strong>"We know exactly how much it contributes."</strong>',
@@ -294,6 +325,11 @@ function applyDetail2Lang(lang) {
   set('pm-role', t.pmRole);
   set('sec-delivery', t.secDelivery); set('delivery-title', t.deliveryTitle);
   t.df.forEach((v,i) => set(`df${i+1}`, v));
+  set('sec-deliverables', t.secDeliverables);
+  set('deliverable-wireframe-title', t.deliverableWireframeTitle);
+  set('deliverable-wireframe-desc', t.deliverableWireframeDesc);
+  set('deliverable-final-title', t.deliverableFinalTitle);
+  set('deliverable-final-desc', t.deliverableFinalDesc);
   set('sec-impact', t.secImpact);
   set('impact-shift-title', t.impactShiftTitle); set('impact-shift-body', t.impactShiftBody, true);
   set('biz-impact-title', t.bizImpactTitle); t.bi.forEach((v,i) => set(`bi${i+1}`, v));
