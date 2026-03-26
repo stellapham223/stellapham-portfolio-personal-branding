@@ -84,6 +84,27 @@
       </div>
     </div>
 
+    <!-- DELIVERABLES -->
+    <div class="detail-section">
+      <h2 class="detail-section-title" id="sec-deliverables">📦 Deliverables</h2>
+
+      <div class="detail-card fade-in" style="margin-bottom:24px;">
+        <h3 id="deliverable-login-title">Login Page — Deep Ocean Design System</h3>
+        <p id="deliverable-login-desc" style="margin-bottom:16px;">Trang đăng nhập với Google OAuth, thiết kế theo Deep Ocean design system — dark mode, glass-morphism card với glow animation.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/stalker-login.png" alt="Competitor Stalker Login Page" style="width:100%; display:block;" />
+        </div>
+      </div>
+
+      <div class="detail-card fade-in">
+        <h3 id="deliverable-dashboard-title">CEO Dashboard — Overview toàn hệ thống</h3>
+        <p id="deliverable-dashboard-desc" style="margin-bottom:16px;">Dashboard CEO hiển thị performance across all teams: stats tổng quan, team performance cards với keyword ranking badges, notable changes và recent competitor changes.</p>
+        <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid rgba(255,200,87,0.15);">
+          <img src="../assets/projects/stalker-dashboard-full.png" alt="Competitor Stalker Dashboard" style="width:100%; display:block;" />
+        </div>
+      </div>
+    </div>
+
     <!-- AGENT TEAM -->
     <div class="detail-section">
       <h2 class="detail-section-title" id="sec-agents">🤖 Đội ngũ 17 AI Agents</h2>
@@ -302,6 +323,11 @@ const detailI18n4 = {
     secInnovation: '🧠 Agentic AI — Điểm Sáng tạo Cốt lõi',
     innovationTitle: 'Không chỉ dùng AI viết code — mà thiết kế cả một đội ngũ AI',
     innovationBody: 'Thay vì dùng Claude Code như trợ lý viết code đơn giản, dự án này coi AI như một đội ngũ kỹ thuật ảo. Mỗi agent có chuyên môn riêng, trách nhiệm cụ thể, quy trình vận hành chuẩn, và giao tiếp liên agent qua bảng công việc và nhật ký quyết định.',
+    secDeliverables: '📦 Deliverables',
+    deliverableLoginTitle: 'Login Page — Deep Ocean Design System',
+    deliverableLoginDesc: 'Trang đăng nhập với Google OAuth, thiết kế theo Deep Ocean design system — dark mode, glass-morphism card với glow animation.',
+    deliverableDashboardTitle: 'CEO Dashboard — Overview toàn hệ thống',
+    deliverableDashboardDesc: 'Dashboard CEO hiển thị performance across all teams: stats tổng quan, team performance cards với keyword ranking badges, notable changes và recent competitor changes.',
     secAgents: '🤖 Đội ngũ 17 AI Agents',
     kpi1val: '5 Agents', kpi1label: 'Development — Kiến trúc, triển khai, debug, review, refactor',
     kpi2val: '6 Agents', kpi2label: 'Design — UX/UI, design system, component, page layout',
@@ -358,6 +384,11 @@ const detailI18n4 = {
     secInnovation: '🧠 Agentic AI — Core Innovation',
     innovationTitle: 'Not just using AI to write code — but designing an entire AI team',
     innovationBody: 'Instead of using Claude Code as a simple coding assistant, this project treats AI as a virtual engineering team. Each agent has domain expertise, specific responsibilities, standard operating procedures, and inter-agent communication through task boards and decision logs.',
+    secDeliverables: '📦 Deliverables',
+    deliverableLoginTitle: 'Login Page — Deep Ocean Design System',
+    deliverableLoginDesc: 'Login page with Google OAuth, designed with the Deep Ocean design system — dark mode, glass-morphism card with glow animation.',
+    deliverableDashboardTitle: 'CEO Dashboard — System-wide Overview',
+    deliverableDashboardDesc: 'CEO dashboard showing performance across all teams: summary stats, team performance cards with keyword ranking badges, notable changes and recent competitor changes.',
     secAgents: '🤖 Team of 17 AI Agents',
     kpi1val: '5 Agents', kpi1label: 'Development — Architecture, implementation, debug, review, refactor',
     kpi2val: '6 Agents', kpi2label: 'Design — UX/UI, design system, component, page layout',
@@ -412,6 +443,9 @@ function applyDetail4Lang(lang) {
   set('sec-context', t.secContext); set('card-context-title', t.contextTitle); set('card-context-body', t.contextBody, true);
   set('card-problem-title', t.problemTitle); set('card-problem-body', t.problemBody, true);
   set('sec-innovation', t.secInnovation); set('innovation-title', t.innovationTitle); set('innovation-body', t.innovationBody);
+  set('sec-deliverables', t.secDeliverables);
+  set('deliverable-login-title', t.deliverableLoginTitle); set('deliverable-login-desc', t.deliverableLoginDesc);
+  set('deliverable-dashboard-title', t.deliverableDashboardTitle); set('deliverable-dashboard-desc', t.deliverableDashboardDesc);
   set('sec-agents', t.secAgents);
   set('kpi1-val', t.kpi1val); set('kpi1-label', t.kpi1label);
   set('kpi2-val', t.kpi2val); set('kpi2-label', t.kpi2label);
