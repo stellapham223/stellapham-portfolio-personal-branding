@@ -330,6 +330,14 @@ const projectsData = {
       summary: 'Xây dựng nền tảng SaaS full-stack theo dõi đối thủ trên Shopify App Store — từ ý tưởng đến production với quy trình Agentic AI và 17 AI agent chuyên biệt.',
       tags: ['Agentic AI', 'Claude Code', 'Next.js', 'Firebase'],
       link: 'projects/competitor-stalker.html'
+    },
+    {
+      num: '05',
+      icon: '🌐',
+      title: 'SaaS Marketing Website',
+      summary: 'Xây dựng toàn bộ marketing website cho Joy Subscriptions bằng Claude Code — 100% AI-assisted, một người đảm nhận vai trò team 5 người thông qua multi-agent AI system.',
+      tags: ['AI Development', 'Claude Code', 'Next.js 16', 'Marketing'],
+      link: 'projects/saas-marketing-website.html'
     }
   ],
   en: [
@@ -364,6 +372,14 @@ const projectsData = {
       summary: 'Built a full-stack SaaS platform to track competitor changes on Shopify App Store — from idea to production using an Agentic AI workflow with 17 specialized AI agents.',
       tags: ['Agentic AI', 'Claude Code', 'Next.js', 'Firebase'],
       link: 'projects/competitor-stalker.html'
+    },
+    {
+      num: '05',
+      icon: '🌐',
+      title: 'SaaS Marketing Website',
+      summary: 'Built an entire marketing website for Joy Subscriptions using Claude Code — 100% AI-assisted development, one person taking on the role of a 5-person team through a multi-agent AI system.',
+      tags: ['AI Development', 'Claude Code', 'Next.js 16', 'Marketing'],
+      link: 'projects/saas-marketing-website.html'
     }
   ]
 };

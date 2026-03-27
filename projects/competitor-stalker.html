@@ -300,6 +300,9 @@
       <a href="../index.html#projects">
         <span id="back-all">Tất cả dự án</span>
       </a>
+      <a href="saas-marketing-website.html">
+        <span id="next-proj">Case Study 05 →</span>
+      </a>
     </div>
 
   </div>
@@ -311,7 +314,7 @@
 <script>
 const detailI18n4 = {
   vi: {
-    back: '← Quay lại', backAll: 'Tất cả dự án', prevProj: '← Case Study 03',
+    back: '← Quay lại', backAll: 'Tất cả dự án', prevProj: '← Case Study 03', nextProj: 'Case Study 05 →',
     title: 'Competitor Stalker — SaaS Giám sát Đối thủ',
     summary: 'Xây dựng nền tảng SaaS full-stack theo dõi thay đổi của đối thủ cạnh tranh trên Shopify App Store — từ ý tưởng đến production chỉ với một developer duy nhất và quy trình Agentic AI với Claude Code.',
     metaStatus: '🚀 Production — Phase 2 in progress',
@@ -372,7 +375,7 @@ const detailI18n4 = {
     phase3: '📋 Kế hoạch — Cảnh báo thông minh, onboarding, thanh toán, phân tích AI, mở rộng đa thị trường',
   },
   en: {
-    back: '← Back', backAll: 'All Projects', prevProj: '← Case Study 03',
+    back: '← Back', backAll: 'All Projects', prevProj: '← Case Study 03', nextProj: 'Case Study 05 →',
     title: 'Competitor Stalker — Competitor Monitoring SaaS',
     summary: 'Built a full-stack SaaS platform that tracks competitor changes on Shopify App Store — from idea to production with a single developer and an Agentic AI workflow powered by Claude Code.',
     metaStatus: '🚀 Production — Phase 2 in progress',
@@ -438,7 +441,7 @@ function applyDetail4Lang(lang) {
   const t = detailI18n4[lang];
   const set = (id, v, isHTML) => { const el = document.getElementById(id); if (el) { if (isHTML) el.innerHTML = v; else el.textContent = v; } };
 
-  set('back-text', t.back); set('back-all', t.backAll); set('prev-proj', t.prevProj);
+  set('back-text', t.back); set('back-all', t.backAll); set('prev-proj', t.prevProj); set('next-proj', t.nextProj);
   set('detail-title', t.title); set('detail-summary', t.summary); set('meta-status', t.metaStatus);
   set('sec-context', t.secContext); set('card-context-title', t.contextTitle); set('card-context-body', t.contextBody, true);
   set('card-problem-title', t.problemTitle); set('card-problem-body', t.problemBody, true);
