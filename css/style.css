@@ -1115,6 +1115,18 @@ footer {
   border: 1px solid var(--border-light);
   color: var(--text-secondary);
 }
+.detail-visit-btn {
+  display: inline-block; margin-top: 24px;
+  font-family: var(--font-primary); font-size: 0.9rem; font-weight: 700;
+  padding: 12px 28px; border-radius: var(--radius);
+  background: var(--yellow); color: var(--black);
+  text-decoration: none; letter-spacing: 0.02em;
+  transition: var(--transition);
+}
+.detail-visit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255,200,87,0.3);
+}
 
 .detail-body {
   padding: 64px 0;
