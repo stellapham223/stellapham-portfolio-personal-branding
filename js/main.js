@@ -15,16 +15,16 @@ const i18n = {
       greeting: 'Xin chào, tôi là',
       name: 'Stella Pham',
       role: 'Growth & Product Marketing',
-      bio: 'Chuyên nghiệp định hướng sản phẩm với kinh nghiệm quản lý vòng đời sản phẩm trên nền tảng SaaS và mobile. Thế mạnh trong phối hợp liên phòng ban, ra quyết định dựa trên dữ liệu.',
+      bio: 'Growth marketer nghĩ như PM. Từ game mobile đến SaaS — ship experiments, build dashboards, dùng AI tạo sản phẩm từ đầu.',
       cta_projects: 'Xem dự án',
       cta_contact: 'Liên hệ',
     },
     about: {
       tag: 'Về tôi',
       title: 'Product thinker, data-driven doer',
-      p1: 'Tôi là Phạm Thị Thu Phương, hiện đang làm việc tại Avada Group với vai trò Product Growth & Go-to-Market Executive. Công việc hàng ngày của tôi xoay quanh việc kết nối dữ liệu, hành vi người dùng và chiến lược tăng trưởng để tạo ra tác động thực sự.',
-      p2: 'Trước đó, tôi có kinh nghiệm quản lý dự án tại Onesoft - Falcon Game Studio, nơi tôi phối hợp vòng đời phát hành cho hơn 20 tựa game mobile trên toàn cầu.',
-      p3: 'Tốt nghiệp Đại học Ngoại Thương chuyên ngành Thương mại Quốc tế (GPA 3.34).',
+      p1: 'Tôi là Phạm Thị Thu Phương — growth marketer chuyên về data và product thinking. Hiện tại tôi đang làm Product Growth & Go-to-Market Executive tại Avada Group, nơi tôi xây dựng experimentation engine cho hệ sinh thái Shopify SaaS.',
+      p2: 'Trước đó, tôi quản lý vòng đời phát hành cho hơn 20 game mobile tại Falcon Game Studio. Tôi tiếp cận growth như cách PM tiếp cận sản phẩm — hypotheses trước, data để validate, iterate nhanh.',
+      p3: 'Điểm khác biệt: tôi dùng AI không chỉ như công cụ, mà như force multiplier. Từ xây SaaS full-stack với 17 AI agents, đến ship marketing website mà thường cần team 5 người — tôi approach mọi vấn đề như một sản phẩm cần tối ưu.',
       link_linkedin: 'LinkedIn',
       link_email: 'Email',
     },
@@ -67,16 +67,16 @@ const i18n = {
       greeting: "Hi, I'm",
       name: 'Stella Pham',
       role: 'Growth & Product Marketing',
-      bio: 'Product-oriented professional with experience in end-to-end product lifecycle management across SaaS and mobile platforms. Strong in cross-functional collaboration, data-driven decision-making.',
+      bio: 'Growth marketer who thinks like a PM. From mobile games to SaaS — shipping experiments, building dashboards, using AI to build products from scratch.',
       cta_projects: 'View Projects',
       cta_contact: 'Get in Touch',
     },
     about: {
       tag: 'About Me',
       title: 'Product thinker, data-driven doer',
-      p1: "I'm Pham Thi Thu Phuong (Stella), currently working at Avada Group as a Product Growth & Go-to-Market Executive. My day-to-day revolves around connecting data, user behavior, and growth strategy to create real impact.",
-      p2: 'Previously, I managed project coordination at Onesoft - Falcon Game Studio, overseeing the publishing lifecycle for 20+ mobile games globally.',
-      p3: 'Graduate of Foreign Trade University, Bachelor in International Trade (GPA 3.34).',
+      p1: "I'm Pham Thi Thu Phuong (Stella) — a growth marketer driven by data and product thinking. Currently a Product Growth & Go-to-Market Executive at Avada Group, where I build experimentation engines for the Shopify SaaS ecosystem.",
+      p2: 'Previously, I managed the publishing lifecycle for 20+ mobile games at Falcon Game Studio. I approach growth the way PMs approach products — hypotheses first, data to validate, iterate fast.',
+      p3: 'What sets me apart: I use AI not just as a tool, but as a force multiplier. From building a full-stack SaaS with 17 AI agents to shipping a marketing website that typically requires a 5-person team — I approach every problem like a product to optimize.',
       link_linkedin: 'LinkedIn',
       link_email: 'Email',
     },
@@ -246,7 +246,7 @@ const experienceData = {
     {
       company: 'Onesoft - Falcon Game Studio',
       desc: 'A leading game developer and publisher in Vietnam with billions of players on Android & iOS',
-      role: 'Global Publishing Manager',
+      role: 'Project Manager',
       period: '7/2023 – 10/2024',
       bullets: [
         'Coordinated cross-functional teams throughout the full lifecycle of 20+ mobile games from concept to launch.',
@@ -301,11 +301,11 @@ const projectsData = {
   vi: [
     {
       num: '01',
-      icon: '📧',
-      title: 'Email Automation Flow',
-      summary: 'Thiết kế luồng email tự động theo milestone cho Shopify SaaS — giảm tỷ lệ uninstall trong 7 ngày đầu và cải thiện chuyển đổi free→paid.',
-      tags: ['Email/CRM', 'SaaS', 'Lifecycle', 'Shopify'],
-      link: 'projects/email-automation-flow.html'
+      icon: '🔐',
+      title: 'Dashboard Authentication',
+      summary: 'Giải quyết vấn đề cost spike và lộ dữ liệu nhạy cảm bằng cách thiết kế hệ thống xác thực Google Auth + role-based access cho dashboard nội bộ.',
+      tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
+      link: 'projects/dashboard-authentication.html'
     },
     {
       num: '02',
@@ -317,11 +317,11 @@ const projectsData = {
     },
     {
       num: '03',
-      icon: '🔐',
-      title: 'Dashboard Authentication',
-      summary: 'Giải quyết vấn đề cost spike và lộ dữ liệu nhạy cảm bằng cách thiết kế hệ thống xác thực Google Auth + role-based access cho dashboard nội bộ.',
-      tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
-      link: 'projects/dashboard-authentication.html'
+      icon: '🌐',
+      title: 'SaaS Marketing Website',
+      summary: 'Xây dựng toàn bộ marketing website cho Joy Subscriptions bằng Claude Code — 100% AI-assisted, một người đảm nhận vai trò team 5 người thông qua multi-agent AI system.',
+      tags: ['AI Development', 'Claude Code', 'Next.js 16', 'Marketing'],
+      link: 'projects/saas-marketing-website.html'
     },
     {
       num: '04',
@@ -333,21 +333,21 @@ const projectsData = {
     },
     {
       num: '05',
-      icon: '🌐',
-      title: 'SaaS Marketing Website',
-      summary: 'Xây dựng toàn bộ marketing website cho Joy Subscriptions bằng Claude Code — 100% AI-assisted, một người đảm nhận vai trò team 5 người thông qua multi-agent AI system.',
-      tags: ['AI Development', 'Claude Code', 'Next.js 16', 'Marketing'],
-      link: 'projects/saas-marketing-website.html'
+      icon: '📧',
+      title: 'Email Automation Flow',
+      summary: 'Thiết kế luồng email tự động theo milestone cho Shopify SaaS — giảm tỷ lệ uninstall trong 7 ngày đầu và cải thiện chuyển đổi free→paid.',
+      tags: ['Email/CRM', 'SaaS', 'Lifecycle', 'Shopify'],
+      link: 'projects/email-automation-flow.html'
     }
   ],
   en: [
     {
       num: '01',
-      icon: '📧',
-      title: 'Email Automation Flow',
-      summary: 'Designed a milestone-based email automation flow for a Shopify SaaS product — reducing early uninstall rates and improving free-to-paid conversion.',
-      tags: ['Email/CRM', 'SaaS', 'Lifecycle', 'Shopify'],
-      link: 'projects/email-automation-flow.html'
+      icon: '🔐',
+      title: 'Dashboard Authentication',
+      summary: 'Solved a critical cost spike and sensitive data exposure by designing a Google Auth + role-based access control system for an internal analytics dashboard.',
+      tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
+      link: 'projects/dashboard-authentication.html'
     },
     {
       num: '02',
@@ -359,11 +359,11 @@ const projectsData = {
     },
     {
       num: '03',
-      icon: '🔐',
-      title: 'Dashboard Authentication',
-      summary: 'Solved a critical cost spike and sensitive data exposure by designing a Google Auth + role-based access control system for an internal analytics dashboard.',
-      tags: ['Security', 'Auth', 'Product', 'Cost optimization'],
-      link: 'projects/dashboard-authentication.html'
+      icon: '🌐',
+      title: 'SaaS Marketing Website',
+      summary: 'Built an entire marketing website for Joy Subscriptions using Claude Code — 100% AI-assisted development, one person taking on the role of a 5-person team through a multi-agent AI system.',
+      tags: ['AI Development', 'Claude Code', 'Next.js 16', 'Marketing'],
+      link: 'projects/saas-marketing-website.html'
     },
     {
       num: '04',
@@ -375,11 +375,11 @@ const projectsData = {
     },
     {
       num: '05',
-      icon: '🌐',
-      title: 'SaaS Marketing Website',
-      summary: 'Built an entire marketing website for Joy Subscriptions using Claude Code — 100% AI-assisted development, one person taking on the role of a 5-person team through a multi-agent AI system.',
-      tags: ['AI Development', 'Claude Code', 'Next.js 16', 'Marketing'],
-      link: 'projects/saas-marketing-website.html'
+      icon: '📧',
+      title: 'Email Automation Flow',
+      summary: 'Designed a milestone-based email automation flow for a Shopify SaaS product — reducing early uninstall rates and improving free-to-paid conversion.',
+      tags: ['Email/CRM', 'SaaS', 'Lifecycle', 'Shopify'],
+      link: 'projects/email-automation-flow.html'
     }
   ]
 };
