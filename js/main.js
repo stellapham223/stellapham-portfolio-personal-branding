@@ -50,6 +50,7 @@ const i18n = {
       title: "Hãy cùng làm việc",
       desc: 'Tôi luôn sẵn sàng cho các cơ hội mới và các cuộc trò chuyện thú vị. Dù bạn có một dự án hay chỉ muốn chào hỏi, hộp thư của tôi luôn mở.',
       email: 'Gửi email',
+      phone: '+84 941 119 128',
       linkedin: 'LinkedIn',
     },
     footer: '© 2025 Stella Pham. Được xây dựng với ❤️'
@@ -102,6 +103,7 @@ const i18n = {
       title: "Let's work together",
       desc: "I'm always open to new opportunities and interesting conversations. Whether you have a project in mind or just want to say hello, my inbox is always open.",
       email: 'Send Email',
+      phone: '+84 941 119 128',
       linkedin: 'LinkedIn',
     },
     footer: '© 2025 Stella Pham. Built with ❤️'
@@ -170,6 +172,7 @@ function applyLang(lang) {
   setText('contact-title', t.contact.title);
   setText('contact-desc', t.contact.desc);
   setText('contact-email-text', t.contact.email);
+  setText('contact-phone-text', t.contact.phone);
   setText('contact-linkedin-text', t.contact.linkedin);
 
   // Footer
